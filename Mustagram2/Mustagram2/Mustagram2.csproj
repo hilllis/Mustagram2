@@ -55,6 +55,12 @@
     <Compile Include="CiclePicture.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="listItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="listItem.Designer.cs">
+      <DependentUpon>listItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="SingUp.Designer.cs">
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="listItem.resx">
+      <DependentUpon>listItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MustaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strokeheart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

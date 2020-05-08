@@ -30,56 +30,56 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listItem));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.comment_display = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ciclePicture1 = new Mustagram.CiclePicture();
+            this.profile1 = new Mustagram.CiclePicture();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.comment1 = new System.Windows.Forms.Label();
+            this.comment2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ciclePicture2 = new Mustagram.CiclePicture();
-            this.label8 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
+            this.profile2 = new Mustagram.CiclePicture();
+            this.comentlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.comment_display.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciclePicture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.ciclePicture1);
+            this.panel1.Controls.Add(this.name);
+            this.panel1.Controls.Add(this.profile1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(420, 64);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.label1.Location = new System.Drawing.Point(81, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Seo_jisu";
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.name.Location = new System.Drawing.Point(81, 21);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(69, 20);
+            this.name.TabIndex = 6;
+            this.name.Text = "Seo_jisu";
             // 
             // label2
             // 
@@ -121,8 +121,8 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.comment2);
+            this.panel5.Controls.Add(this.comment1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 427);
             this.panel5.Name = "panel5";
@@ -138,15 +138,15 @@
             this.panel6.Size = new System.Drawing.Size(420, 26);
             this.panel6.TabIndex = 4;
             // 
-            // panel7
+            // comment_display
             // 
-            this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.ciclePicture2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 502);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(420, 44);
-            this.panel7.TabIndex = 5;
+            this.comment_display.Controls.Add(this.comentlabel);
+            this.comment_display.Controls.Add(this.profile2);
+            this.comment_display.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comment_display.Location = new System.Drawing.Point(0, 502);
+            this.comment_display.Name = "comment_display";
+            this.comment_display.Size = new System.Drawing.Size(420, 44);
+            this.comment_display.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -168,16 +168,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ciclePicture1
+            // profile1
             // 
-            this.ciclePicture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ciclePicture1.Image = ((System.Drawing.Image)(resources.GetObject("ciclePicture1.Image")));
-            this.ciclePicture1.Location = new System.Drawing.Point(26, 7);
-            this.ciclePicture1.Name = "ciclePicture1";
-            this.ciclePicture1.Size = new System.Drawing.Size(49, 49);
-            this.ciclePicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ciclePicture1.TabIndex = 5;
-            this.ciclePicture1.TabStop = false;
+            this.profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
+            this.profile1.Location = new System.Drawing.Point(26, 7);
+            this.profile1.Name = "profile1";
+            this.profile1.Size = new System.Drawing.Size(49, 49);
+            this.profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile1.TabIndex = 5;
+            this.profile1.TabStop = false;
             // 
             // label3
             // 
@@ -189,23 +189,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "좋아요";
             // 
-            // label4
+            // comment1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 12);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
+            this.comment1.AutoSize = true;
+            this.comment1.Location = new System.Drawing.Point(5, 11);
+            this.comment1.Name = "comment1";
+            this.comment1.Size = new System.Drawing.Size(64, 12);
+            this.comment1.TabIndex = 0;
+            this.comment1.Text = "comment1";
             // 
-            // label5
+            // comment2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 12);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
+            this.comment2.AutoSize = true;
+            this.comment2.Location = new System.Drawing.Point(5, 28);
+            this.comment2.Name = "comment2";
+            this.comment2.Size = new System.Drawing.Size(64, 12);
+            this.comment2.TabIndex = 1;
+            this.comment2.Text = "comment2";
             // 
             // label6
             // 
@@ -217,44 +217,44 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "댓글 수";
             // 
-            // label7
+            // time
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 563);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 12);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "시간";
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(3, 563);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(29, 12);
+            this.time.TabIndex = 6;
+            this.time.Text = "시간";
             // 
-            // ciclePicture2
+            // profile2
             // 
-            this.ciclePicture2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ciclePicture2.Image = ((System.Drawing.Image)(resources.GetObject("ciclePicture2.Image")));
-            this.ciclePicture2.Location = new System.Drawing.Point(19, 2);
-            this.ciclePicture2.Name = "ciclePicture2";
-            this.ciclePicture2.Size = new System.Drawing.Size(40, 40);
-            this.ciclePicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ciclePicture2.TabIndex = 6;
-            this.ciclePicture2.TabStop = false;
+            this.profile2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.profile2.Image = ((System.Drawing.Image)(resources.GetObject("profile2.Image")));
+            this.profile2.Location = new System.Drawing.Point(19, 2);
+            this.profile2.Name = "profile2";
+            this.profile2.Size = new System.Drawing.Size(40, 40);
+            this.profile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile2.TabIndex = 6;
+            this.profile2.TabStop = false;
             // 
-            // label8
+            // comentlabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 8F);
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label8.Location = new System.Drawing.Point(83, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "댓글 달기...";
+            this.comentlabel.AutoSize = true;
+            this.comentlabel.Font = new System.Drawing.Font("Comic Sans MS", 8F);
+            this.comentlabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.comentlabel.Location = new System.Drawing.Point(83, 16);
+            this.comentlabel.Name = "comentlabel";
+            this.comentlabel.Size = new System.Drawing.Size(67, 15);
+            this.comentlabel.TabIndex = 2;
+            this.comentlabel.Text = "댓글 달기...";
             // 
             // listItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.time);
+            this.Controls.Add(this.comment_display);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -272,12 +272,12 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.comment_display.ResumeLayout(false);
+            this.comment_display.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciclePicture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,23 +286,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Mustagram.CiclePicture ciclePicture1;
+        private Mustagram.CiclePicture profile1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label name;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel comment_display;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label comment2;
+        private System.Windows.Forms.Label comment1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private Mustagram.CiclePicture ciclePicture2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label comentlabel;
+        private Mustagram.CiclePicture profile2;
+        private System.Windows.Forms.Label time;
     }
 }

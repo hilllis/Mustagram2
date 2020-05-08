@@ -12,6 +12,7 @@ namespace Mustagram2
 {
     public partial class Login : Form
     {
+        SingUp signUp = new SingUp();
         public Login()
         {
             InitializeComponent();
@@ -69,14 +70,14 @@ namespace Mustagram2
         private void label7_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            if (form2.IsDisposed) // 컨트롤이 죽었으면
+            if (signUp.IsDisposed) // 컨트롤이 죽었으면
             {
-                form2 = new Form2(); // 다시 인스턴스생성하고 열어줍니다
-                form2.Show();
+                signUp = new SingUp(); // 다시 인스턴스생성하고 열어줍니다
+                signUp.Show();
             }
             else
             {
-                form2.Show();
+                signUp.Show();
             }
         }
 

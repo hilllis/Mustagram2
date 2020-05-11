@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1B8A17AA-0A7B-4CEF-B0CE-DDAA002707E5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Mustagram2</RootNamespace>
     <AssemblyName>Mustagram2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -133,6 +133,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\jisu2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strokeheart1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

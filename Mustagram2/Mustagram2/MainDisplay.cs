@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mustagram2.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,32 @@ namespace Mustagram2
         {
             InitializeComponent();
         }
+
+        private void MainDisplay_Load(object sender, EventArgs e)
+        {
+            populateItems();
+        }
+        private void populateItems()
+        {
+            listItem[] LT = new listItem[10];
+
+            for (int i = 0; i < LT.Length; i++)
+            {
+                LT[i] = new listItem();
+                LT[i].Name = "Seo Jisu";
+                LT[i].Imagebox = Resources.jisu2;
+               
+                if (flowLayoutPanel1.Controls.Count < 0)
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                }
+                else
+                {
+                    flowLayoutPanel1.Controls.Add(LT[i]);
+                }
+
+            }
+        }
+
     }
 }

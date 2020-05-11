@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+*.cs
+Mustagram2/Mustagram2/listItem.cs
+*.cs
+Mustagram2/Mustagram2/listItem.cs
+*.cs

@@ -49,6 +49,16 @@ namespace Mustagram2
                 lvw_profile2.Image = value;
             }
         }
+        [Category("Custom Props")]
+        public Image MainImage
+        {
+            get { return _image; }
+            set
+            {
+                _image = value; main_image.Image = value;
+            
+            }
+        }
         #endregion
     } 
 }

@@ -48,7 +48,7 @@ namespace Mustagram2
 
         private void passwordbox_Enter(object sender, EventArgs e)
         {
-            Console.WriteLine("DSsd");
+         
             if (txtPassword.Text == "비밀번호")
             {
                 txtPassword.Enabled = true;

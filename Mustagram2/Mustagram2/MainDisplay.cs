@@ -1,24 +1,29 @@
-﻿using Mustagram2.Properties;
+﻿using Microsoft.VisualBasic.PowerPacks.Printing;
+using Mustagram2.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mustagram2
 {
+    
     public partial class MainDisplay : Form
     {
+   
+
+        int prevY = 0;
         public MainDisplay()
         {
-            InitializeComponent();
-            
-        }
+            InitializeComponent(); 
 
+        }
         private void MainDisplay_Load(object sender, EventArgs e)
         {
             populateItems();
@@ -26,7 +31,7 @@ namespace Mustagram2
         private void populateItems()
         {
             listItem[] LT = new listItem[10];
-
+           
             for (int i = 0; i < LT.Length; i++)
             {
                 LT[i] = new listItem();

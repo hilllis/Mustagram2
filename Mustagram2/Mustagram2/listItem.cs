@@ -12,9 +12,12 @@ namespace Mustagram2
 {
     public partial class listItem : UserControl
     {
+      
+        
         public listItem()
         {
             InitializeComponent();
+            
         } 
         #region MyRegion
 
@@ -59,6 +62,8 @@ namespace Mustagram2
             
             }
         }
+
+        public bool SCrollable { get; internal set; }
         #endregion
     } 
 }

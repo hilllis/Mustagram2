@@ -21,8 +21,10 @@ namespace Mustagram2
         int prevY = 0;
         public MainDisplay()
         {
-            InitializeComponent(); 
-
+            InitializeComponent();
+      
+        
+           
         }
         private void MainDisplay_Load(object sender, EventArgs e)
         {

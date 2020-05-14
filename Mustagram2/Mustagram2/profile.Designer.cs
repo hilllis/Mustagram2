@@ -52,12 +52,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -300,14 +300,24 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.shapeContainer3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 223);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(491, 356);
             this.panel6.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20F);
+            this.label5.Location = new System.Drawing.Point(129, 163);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(230, 38);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "사진 및 음악 공유";
             // 
             // shapeContainer3
             // 
@@ -328,7 +338,7 @@
             this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape3.CornerRadius = 2;
             this.rectangleShape3.FillColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rectangleShape3.Location = new System.Drawing.Point(243, 85);
+            this.rectangleShape3.Location = new System.Drawing.Point(239, 86);
             this.rectangleShape3.Name = "rectangleShape3";
             this.rectangleShape3.Size = new System.Drawing.Size(5, 45);
             // 
@@ -338,7 +348,7 @@
             this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape2.CornerRadius = 2;
             this.rectangleShape2.FillGradientColor = System.Drawing.Color.Black;
-            this.rectangleShape2.Location = new System.Drawing.Point(223, 104);
+            this.rectangleShape2.Location = new System.Drawing.Point(220, 105);
             this.rectangleShape2.Name = "rectangleShape2";
             this.rectangleShape2.Size = new System.Drawing.Size(45, 5);
             // 
@@ -346,28 +356,21 @@
             // 
             this.rectangleShape1.BackColor = System.Drawing.Color.White;
             this.rectangleShape1.CornerRadius = 16;
-            this.rectangleShape1.Location = new System.Drawing.Point(213, 75);
+            this.rectangleShape1.Location = new System.Drawing.Point(208, 76);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(65, 65);
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20F);
-            this.label5.Location = new System.Drawing.Point(128, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 38);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "사진 및 음악 공유";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(202, 254);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 12);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "label6";
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Underline);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(179)))), ((int)(((byte)(244)))));
+            this.label7.Location = new System.Drawing.Point(134, 239);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(216, 17);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "첫 번째 사진이나 동영상을 공유하세요";
             // 
             // profile
             // 
@@ -432,6 +435,6 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

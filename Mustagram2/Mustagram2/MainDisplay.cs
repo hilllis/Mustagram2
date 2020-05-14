@@ -103,5 +103,18 @@ namespace Mustagram2
             Console.WriteLine("test22");
             this.Close();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            profile Pr = new profile();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(Pr);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(LT[0]);
+        }
     }
 }

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1B8A17AA-0A7B-4CEF-B0CE-DDAA002707E5}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Mustagram2</RootNamespace>
     <AssemblyName>Mustagram2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -59,6 +59,12 @@
     <Compile Include="CiclePicture.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="firstMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="firstMain.Designer.cs">
+      <DependentUpon>firstMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="listItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="SingUp.Designer.cs">
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="firstMain.resx">
+      <DependentUpon>firstMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="listItem.resx">
       <DependentUpon>listItem.cs</DependentUpon>
     </EmbeddedResource>

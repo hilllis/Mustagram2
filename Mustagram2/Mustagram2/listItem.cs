@@ -64,6 +64,12 @@ namespace Mustagram2
         }
 
         public bool SCrollable { get; internal set; }
+
         #endregion
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+
+        }
     } 
 }

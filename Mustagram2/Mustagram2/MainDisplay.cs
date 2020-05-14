@@ -48,7 +48,6 @@ namespace Mustagram2
                     listIndex -= 1;
                     flowLayoutPanel1.Controls.Clear();
                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
-                    Console.WriteLine("좋지않습니다1");
                 }
               
 
@@ -60,7 +59,6 @@ namespace Mustagram2
                     listIndex += 1;
                     flowLayoutPanel1.Controls.Clear();
                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
-                    Console.WriteLine("좋지않습니다2");
                 }
             }
         }

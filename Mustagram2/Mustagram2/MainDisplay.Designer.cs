@@ -99,10 +99,11 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::Mustagram2.Properties.Resources.pri;
-            this.pictureBox4.Location = new System.Drawing.Point(414, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(420, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(77, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(68, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;

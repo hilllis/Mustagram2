@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
+            this.exit = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer7 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.exit = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,28 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(491, 61);
             this.panel7.TabIndex = 44;
+            // 
+            // exit
+            // 
+            this.exit.AutoSize = true;
+            this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exit.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit.Location = new System.Drawing.Point(463, 10);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(16, 16);
+            this.exit.TabIndex = 45;
+            this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.MustaIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // shapeContainer7
             // 
@@ -72,40 +94,20 @@
             this.lineShape9.Y1 = 60;
             this.lineShape9.Y2 = 60;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.MustaIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 587);
             this.flowLayoutPanel1.TabIndex = 45;
-            // 
-            // exit
-            // 
-            this.exit.AutoSize = true;
-            this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(463, 10);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(16, 16);
-            this.exit.TabIndex = 45;
-            this.exit.Text = "X";
-            this.exit.Click += new System.EventHandler(this.exit_Click_1);
             // 
             // firstMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel7);
@@ -125,7 +127,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer7;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label exit;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

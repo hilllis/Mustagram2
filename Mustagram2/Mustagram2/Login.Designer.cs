@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.c = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.passwordbox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.Idbox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.passwordbox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.c = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,6 +73,42 @@
             this.shapeContainer1.TabIndex = 31;
             this.shapeContainer1.TabStop = false;
             // 
+            // c
+            // 
+            this.c.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.c.Name = "c";
+            this.c.X1 = 0;
+            this.c.X2 = 491;
+            this.c.Y1 = 642;
+            this.c.Y2 = 642;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
+            this.btnLogin.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
+            this.btnLogin.CornerRadius = 15;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FillColor = System.Drawing.Color.LightGray;
+            this.btnLogin.Location = new System.Drawing.Point(23, 471);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(432, 53);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // passwordbox
+            // 
+            this.passwordbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.passwordbox.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.passwordbox.BorderColor = System.Drawing.Color.LightGray;
+            this.passwordbox.CornerRadius = 15;
+            this.passwordbox.FillColor = System.Drawing.Color.LightGray;
+            this.passwordbox.Location = new System.Drawing.Point(26, 370);
+            this.passwordbox.Name = "passwordbox";
+            this.passwordbox.SelectionColor = System.Drawing.Color.White;
+            this.passwordbox.Size = new System.Drawing.Size(432, 53);
+            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
+            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
+            // 
             // Idbox
             // 
             this.Idbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
@@ -103,20 +139,6 @@
             this.txtId.TabIndex = 32;
             this.txtId.Text = "아이디";
             // 
-            // passwordbox
-            // 
-            this.passwordbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.passwordbox.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.passwordbox.BorderColor = System.Drawing.Color.LightGray;
-            this.passwordbox.CornerRadius = 15;
-            this.passwordbox.FillColor = System.Drawing.Color.LightGray;
-            this.passwordbox.Location = new System.Drawing.Point(26, 370);
-            this.passwordbox.Name = "passwordbox";
-            this.passwordbox.SelectionColor = System.Drawing.Color.White;
-            this.passwordbox.Size = new System.Drawing.Size(432, 53);
-            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
-            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
-            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
@@ -131,21 +153,11 @@
             this.txtPassword.TabIndex = 33;
             this.txtPassword.Text = "비밀번호";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
-            this.btnLogin.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
-            this.btnLogin.CornerRadius = 15;
-            this.btnLogin.FillColor = System.Drawing.Color.LightGray;
-            this.btnLogin.Location = new System.Drawing.Point(23, 471);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(432, 53);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Underline);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(207, 487);
@@ -153,6 +165,7 @@
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 34;
             this.label2.Text = "로그인";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -185,15 +198,6 @@
             this.label5.Size = new System.Drawing.Size(182, 2);
             this.label5.TabIndex = 37;
             // 
-            // c
-            // 
-            this.c.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.c.Name = "c";
-            this.c.X1 = 0;
-            this.c.X2 = 491;
-            this.c.Y1 = 642;
-            this.c.Y2 = 642;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -216,6 +220,7 @@
             this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 39;
             this.label7.Text = "가입하기";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label1
             // 

@@ -46,5 +46,15 @@ namespace Mustagram2
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }

@@ -14,31 +14,42 @@ using System.Windows.Forms;
 
 namespace Mustagram2
 {
-    
+
     public partial class MainDisplay : Form
     {
 
-        listItem[] LT = new listItem[10];
+   
         firstMain fM = new firstMain();
         int listIndex = 0;
         public MainDisplay()
         {
             InitializeComponent();
 
-           
-    
+            //this.panel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseWheel);
 
+        }
+        private void panel1_MouseWheel(object sender, MouseEventArgs e)
+        {
+
+            if (e.Delta > 0)
+            {
+             //   Console.WriteLine("dss");
+               // panel1.
+            }  
+            else
+            {
+              //  Console.WriteLine("qqq");
+            }
         }
 
 
-       
         private void MainDisplay_Load(object sender, EventArgs e)
         {
             populateItems();
         }
         private void populateItems()
         {
-           // panel1.Controls.Clear();
+            // panel1.Controls.Clear();
             panel1.Controls.Add(fM);
         }
 
@@ -55,7 +66,7 @@ namespace Mustagram2
             panel1.Controls.Add(fM);
         }
 
-      
+
 
         public void Exit()
         {

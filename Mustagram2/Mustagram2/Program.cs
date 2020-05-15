@@ -16,7 +16,7 @@ namespace Mustagram2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainDisplay());
+            Application.Run(new Login());
         }
     }
 }

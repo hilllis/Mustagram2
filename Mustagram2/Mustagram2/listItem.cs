@@ -12,13 +12,13 @@ namespace Mustagram2
 {
     public partial class listItem : UserControl
     {
-
+        int PrevY=0;
         public listItem()
         {
             InitializeComponent();
-            
-
-        } 
+           
+        }
+       
         #region MyRegion
 
         private string _name;
@@ -67,9 +67,6 @@ namespace Mustagram2
 
         #endregion
 
-        private void exit_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     } 
 }

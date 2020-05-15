@@ -31,11 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nameBox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.passwordbox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label2 = new System.Windows.Forms.Label();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.passwordbox = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,19 +85,26 @@
             this.shapeContainer1.TabIndex = 30;
             this.shapeContainer1.TabStop = false;
             // 
-            // passwordbox
+            // lineShape1
             // 
-            this.passwordbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.passwordbox.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.passwordbox.BorderColor = System.Drawing.Color.LightGray;
-            this.passwordbox.CornerRadius = 15;
-            this.passwordbox.FillColor = System.Drawing.Color.LightGray;
-            this.passwordbox.Location = new System.Drawing.Point(26, 370);
-            this.passwordbox.Name = "passwordbox";
-            this.passwordbox.SelectionColor = System.Drawing.Color.White;
-            this.passwordbox.Size = new System.Drawing.Size(432, 53);
-            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
-            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
+            this.lineShape1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 491;
+            this.lineShape1.Y1 = 641;
+            this.lineShape1.Y2 = 641;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
+            this.btnLogin.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
+            this.btnLogin.CornerRadius = 15;
+            this.btnLogin.FillColor = System.Drawing.Color.LightGray;
+            this.btnLogin.Location = new System.Drawing.Point(164, 539);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(111, 53);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // rectangleShape1
             // 
@@ -114,16 +121,19 @@
             this.rectangleShape1.Enter += new System.EventHandler(this.Idbox_Enter);
             this.rectangleShape1.Leave += new System.EventHandler(this.Idbox_Leave);
             // 
-            // btnLogin
+            // passwordbox
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
-            this.btnLogin.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(247)))));
-            this.btnLogin.CornerRadius = 15;
-            this.btnLogin.FillColor = System.Drawing.Color.LightGray;
-            this.btnLogin.Location = new System.Drawing.Point(164, 539);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(111, 53);
+            this.passwordbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.passwordbox.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.passwordbox.BorderColor = System.Drawing.Color.LightGray;
+            this.passwordbox.CornerRadius = 15;
+            this.passwordbox.FillColor = System.Drawing.Color.LightGray;
+            this.passwordbox.Location = new System.Drawing.Point(26, 370);
+            this.passwordbox.Name = "passwordbox";
+            this.passwordbox.SelectionColor = System.Drawing.Color.White;
+            this.passwordbox.Size = new System.Drawing.Size(432, 53);
+            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
+            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
             // 
             // label2
             // 
@@ -136,15 +146,7 @@
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 31;
             this.label2.Text = "회원가입";
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 491;
-            this.lineShape1.Y1 = 641;
-            this.lineShape1.Y2 = 641;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label6
             // 

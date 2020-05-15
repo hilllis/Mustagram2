@@ -13,7 +13,9 @@ namespace Mustagram2
     public partial class Login : Form
     {
         SingUp signUp = new SingUp();
-        public Login()
+        MainDisplay ma = new MainDisplay();
+        
+    public Login()
         {
             InitializeComponent();
         }
@@ -69,7 +71,7 @@ namespace Mustagram2
 
         private void label7_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            //timer1.Start();
             if (signUp.IsDisposed) // 컨트롤이 죽었으면
             {
                 signUp = new SingUp(); // 다시 인스턴스생성하고 열어줍니다
@@ -89,6 +91,26 @@ namespace Mustagram2
         private void timer2_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (ma.IsDisposed) // 컨트롤이 죽었으면
+            {
+                ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
+                ma.Show();
+            
+
+            }
+            else
+            {
+                ma.Show();
+          
+            }
+        }
+            private void label2_Click(object sender, EventArgs e)
+        {
+            btnLogin_Click(sender, e);
         }
     }
 }

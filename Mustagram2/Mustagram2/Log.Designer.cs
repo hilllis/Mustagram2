@@ -1,6 +1,6 @@
 ﻿namespace Mustagram2
 {
-    partial class firstMain
+    partial class Log
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -32,25 +32,24 @@
             this.exit = new System.Windows.Forms.Label();
             this.shapeContainer7 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.exit);
-            this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Controls.Add(this.shapeContainer7);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(491, 61);
-            this.panel7.TabIndex = 44;
+            this.panel7.TabIndex = 45;
             // 
             // exit
             // 
@@ -62,7 +61,6 @@
             this.exit.Size = new System.Drawing.Size(16, 16);
             this.exit.TabIndex = 45;
             this.exit.Text = "X";
-            this.exit.Click += new System.EventHandler(this.exit_Click_1);
             // 
             // shapeContainer7
             // 
@@ -84,51 +82,46 @@
             this.lineShape9.Y1 = 60;
             this.lineShape9.Y2 = 60;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.label1.Location = new System.Drawing.Point(219, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 23);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "활동";
+            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 587);
-            this.flowLayoutPanel1.TabIndex = 45;
+            this.flowLayoutPanel1.TabIndex = 46;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.MustaIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // firstMain
+            // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel7);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "firstMain";
+            this.Name = "Log";
             this.Size = new System.Drawing.Size(491, 648);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label exit;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer7;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
-        private System.Windows.Forms.Label exit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

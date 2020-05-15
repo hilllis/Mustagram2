@@ -34,12 +34,12 @@ namespace Mustagram2
                 {
                     flowLayoutPanel1.Controls.Clear();
                 }
-              
+
 
             }
             flowLayoutPanel1.Controls.Add(LT[0]);
         }
-        
+
 
         private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -50,12 +50,12 @@ namespace Mustagram2
                 if (listIndex > 0)
                 {
                     listIndex -= 1;
-                      flowLayoutPanel1.Controls.Clear();
-                      flowLayoutPanel1.Controls.Add(LT[listIndex]);
+                    flowLayoutPanel1.Controls.Clear();
+                    flowLayoutPanel1.Controls.Add(LT[listIndex]);
 
                 }
-            
-           
+
+
             }
             else
             {
@@ -63,9 +63,9 @@ namespace Mustagram2
                 {
                     listIndex += 1;
                     flowLayoutPanel1.Controls.Clear();
-                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
+                    flowLayoutPanel1.Controls.Add(LT[listIndex]);
                 }
-        
+
             }
         }
 
@@ -77,10 +77,13 @@ namespace Mustagram2
 
         private void exit_Click_1(object sender, EventArgs e)
         {
-        
+
             MainDisplay.ActiveForm.Close();
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

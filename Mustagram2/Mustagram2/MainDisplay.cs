@@ -20,6 +20,7 @@ namespace Mustagram2
 
    
         firstMain fM = new firstMain();
+        Log lg = new Log();
         int listIndex = 0;
         public MainDisplay()
         {
@@ -76,6 +77,12 @@ namespace Mustagram2
         public void exit_Click_2(object sender, EventArgs e)
         {
             Exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(lg);
         }
     }
 }

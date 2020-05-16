@@ -23,7 +23,7 @@ namespace Mustagram2
            
 
         }
-        static async Task Main()
+      /*  static async Task Main()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace Mustagram2
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
             }
-        }
+        }*/
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();

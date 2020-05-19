@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Mustagram2
 {
     public partial class listItem : UserControl
     {
         int PrevY=0;
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
         public listItem()
         {
             InitializeComponent();
@@ -58,15 +60,27 @@ namespace Mustagram2
             get { return _image; }
             set
             {
-                _image = value; main_image.Image = value;
+                _image = value; lvw_music.Image = value;
             
             }
         }
 
         public bool SCrollable { get; internal set; }
 
+
         #endregion
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                player.URL = @"C:\Users\poop4\Desktop\유진하\러블리즈_Sweet Dream.mp3";
+                player.controls.play();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     } 
 }

@@ -70,17 +70,17 @@ namespace Mustagram2
 
         #endregion
 
-        private void label1_Click(object sender, EventArgs e)
+        private void music_Click(object sender, EventArgs e)
         {
-            try
-            {
-                player.URL = @"C:\Users\poop4\Desktop\유진하\러블리즈_Sweet Dream.mp3";
-                player.controls.play();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
+            player.URL = @"C:\Users\poop4\Desktop\유진하/러블리즈_Sweet Dream.mp3";
+            player.controls.play();
+            Console.WriteLine(player.status);
+        }
+
+        private void lvw_heart1_Click(object sender, EventArgs e)
+        {
+
         }
     } 
 }

@@ -78,6 +78,12 @@
     <Compile Include="listItem.Designer.cs">
       <DependentUpon>listItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="listPictiure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="listPictiure.Designer.cs">
+      <DependentUpon>listPictiure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="listItem.resx">
       <DependentUpon>listItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listPictiure.resx">
+      <DependentUpon>listPictiure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log.resx">
       <DependentUpon>Log.cs</DependentUpon>

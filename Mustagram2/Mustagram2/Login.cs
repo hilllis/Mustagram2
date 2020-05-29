@@ -16,7 +16,8 @@ namespace Mustagram2
         SingUp signUp = new SingUp();
         MainDisplay ma = new MainDisplay();
         static readonly HttpClient client = new HttpClient();
-     
+        string Id="";
+        string Password = "";
     public Login()
         {
             InitializeComponent();
@@ -67,6 +68,7 @@ namespace Mustagram2
                 txtId.Text = "아이디";
                 txtId.ForeColor = Color.Gray;
             }
+           
         }
 
         private void passwordbox_Enter(object sender, EventArgs e)
@@ -88,6 +90,7 @@ namespace Mustagram2
                 txtPassword.Text = "비밀번호";
                 txtPassword.ForeColor = Color.Gray;
             }
+          
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -116,17 +119,33 @@ namespace Mustagram2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (ma.IsDisposed) // 컨트롤이 죽었으면
-            {
-                ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
-                ma.Show();
-            
 
+            
+            if (txtId.Text != "" && txtPassword.Text != "" && txtId.Text != "아이디"&& txtPassword.Text != "비밀번호")
+            {
+                Console.WriteLine("Login ID : {0}", txtId.Text);
+                Console.WriteLine("Login Password : {0}", txtPassword.Text);
+                if (ma.IsDisposed) // 컨트롤이 죽었으면
+                {
+                    ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
+                    ma.Show();
+
+
+                }
+                else
+                {
+                    ma.Show();
+
+                }
+              
+                txtId.Text = "아이디";
+                txtId.ForeColor = Color.Gray;
+                txtPassword.Text = "비밀번호";
+                txtPassword.ForeColor = Color.Gray;
             }
             else
             {
-                ma.Show();
-          
+                MessageBox.Show("ID, Password Input");
             }
         }
             private void label2_Click(object sender, EventArgs e)

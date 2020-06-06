@@ -28,35 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lvw_music = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_music)).BeginInit();
+            this.picure_main = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picure_main)).BeginInit();
             this.SuspendLayout();
             // 
-            // lvw_music
+            // picure_main
             // 
-            this.lvw_music.Location = new System.Drawing.Point(18, 15);
-            this.lvw_music.Name = "lvw_music";
-            this.lvw_music.Size = new System.Drawing.Size(455, 272);
-            this.lvw_music.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.lvw_music.TabIndex = 1;
-            this.lvw_music.TabStop = false;
+            this.picure_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picure_main.Location = new System.Drawing.Point(0, 0);
+            this.picure_main.Margin = new System.Windows.Forms.Padding(0);
+            this.picure_main.Name = "picure_main";
+            this.picure_main.Size = new System.Drawing.Size(491, 302);
+            this.picure_main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picure_main.TabIndex = 1;
+            this.picure_main.TabStop = false;
             // 
             // listPictiure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lvw_music);
+            this.Controls.Add(this.picure_main);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "listPictiure";
             this.Size = new System.Drawing.Size(491, 302);
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_music)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picure_main)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox lvw_music;
+        public System.Windows.Forms.PictureBox picure_main;
     }
 }

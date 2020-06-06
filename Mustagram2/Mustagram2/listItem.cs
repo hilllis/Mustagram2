@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using Mustagram2.Properties;
 
 namespace Mustagram2
 {
@@ -15,10 +16,32 @@ namespace Mustagram2
     {
         int PrevY=0;
         WindowsMediaPlayer player = new WindowsMediaPlayer();
+
+        public listPictiure[] LP = new listPictiure[4];
+        int pictureindex = 0;
         public listItem()
         {
             InitializeComponent();
+            pictureBox1.Parent = lvw_main.picure_main;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox2.Parent = lvw_main.picure_main;
+            pictureBox2.BackColor = Color.Transparent;
+            music.Parent = lvw_main.picure_main;
+            music.BackColor = Color.Transparent;
+            for (int i = 0; i < LP.Length; i++)
+            {
+                LP[i] = new listPictiure();
            
+
+
+            }
+         
+
+            LP[0].Image_main = Resources.jisu;
+            LP[1].Image_main = Resources.jisu2;
+            LP[2].Image_main = Resources.soo;
+            LP[3].Image_main = Resources.seulgi;
+
         }
        
         #region MyRegion
@@ -26,7 +49,24 @@ namespace Mustagram2
         private string _name;
         private string _message;
         private Image _image;
+        private string music_name;
+        private Image main_image;
         private string _time;
+        [Category("Custom Props")]
+        public string Music_name
+        {
+            get { return music_name; }
+            set
+            {
+                music_name = value;
+                music.Text = value;
+                string str = @"C:\Users\poop4\Desktop\유진하/";
+                Console.WriteLine(music.Text);
+                player.URL = str + music.Text;
+                player.controls.stop();
+                Console.WriteLine(player.status);
+            }
+        }
         [Category("Custom Props")]
         public string Name
         {
@@ -57,10 +97,10 @@ namespace Mustagram2
         [Category("Custom Props")]
         public Image MainImage
         {
-            get { return _image; }
+            get { return main_image; }
             set
             {
-                _image = value; lvw_music.Image = value;
+                main_image = value; lvw_main.Image_main = value;
             
             }
         }
@@ -72,13 +112,52 @@ namespace Mustagram2
 
         private void music_Click(object sender, EventArgs e)
         {
-           
-            player.URL = @"C:\Users\poop4\Desktop\유진하/러블리즈_Sweet Dream.mp3";
-            player.controls.play();
-            Console.WriteLine(player.status);
+            Console.WriteLine(player.playState.ToString());
+            Console.WriteLine(player.URL);
+            
+            if (player.playState.ToString().Equals("wmppsReady"))
+            {
+                player.controls.play();
+                Console.WriteLine(player.status);
+            }
+            if (player.playState.Equals("wmppsPlaying"))
+            {
+                player.controls.stop();
+                Console.WriteLine(player.playState);
+                Console.WriteLine(player.status);
+            }
+            
+        }
+        public void left(object sender, EventArgs e)
+        {
+
+            if (0 < pictureindex)
+            {
+                Console.WriteLine("left {0}", pictureindex);
+                this.MainImage = LP[--pictureindex].Image_main;
+            }
         }
 
-        private void lvw_heart1_Click(object sender, EventArgs e)
+        public void Right(object sender, EventArgs e)
+        {
+            if ( pictureindex<LP.Length-1)
+            {
+                Console.WriteLine("right {0}", pictureindex);
+                this.MainImage = LP[++pictureindex].Image_main;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Left(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvw_main_Load(object sender, EventArgs e)
         {
 
         }

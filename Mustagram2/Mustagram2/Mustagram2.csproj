@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AltoControls">
@@ -233,6 +234,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\proflie_Select2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jisu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seulgi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

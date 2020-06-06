@@ -12,9 +12,11 @@ namespace Mustagram2
 {
     public partial class SingUp : Form
     {
+        public virtual string PlaceholderText { get; set; }
         public SingUp()
         {
             InitializeComponent();
+            textPassword.PlaceholderText("dsadsa");
         }
 
         private void SingUp_Load(object sender, EventArgs e)
@@ -127,6 +129,11 @@ namespace Mustagram2
         public void Exit()
         {
             Close();
+        }
+
+        private void textPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

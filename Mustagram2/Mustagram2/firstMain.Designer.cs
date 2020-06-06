@@ -30,10 +30,10 @@
         {
             this.panel7 = new System.Windows.Forms.Panel();
             this.exit = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer7 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,16 @@
             this.exit.Text = "X";
             this.exit.Click += new System.EventHandler(this.exit_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.MustaIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // shapeContainer7
             // 
             this.shapeContainer7.Location = new System.Drawing.Point(0, 0);
@@ -93,16 +103,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 587);
             this.flowLayoutPanel1.TabIndex = 45;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.MustaIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // firstMain
             // 

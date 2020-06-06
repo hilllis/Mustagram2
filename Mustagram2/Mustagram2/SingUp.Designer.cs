@@ -208,10 +208,12 @@
             this.textPassword.HideSelection = false;
             this.textPassword.Location = new System.Drawing.Point(42, 385);
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.ShortcutsEnabled = false;
             this.textPassword.Size = new System.Drawing.Size(387, 21);
             this.textPassword.TabIndex = 36;
             this.textPassword.Text = "비밀번호";
+            this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
             // txtPassword_check
             // 

@@ -15,21 +15,23 @@ namespace Mustagram2
     public partial class firstMain : UserControl
     {
 
-
         listItem[] LT = new listItem[10];
+       
         int listIndex = 0;
 
         public firstMain()
         {
             InitializeComponent();
+          
 
             this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
             for (int i = 0; i < LT.Length; i++)
             {
                 LT[i] = new listItem();
                 LT[i].Name = "Seo Jisu" + i.ToString();
-                LT[i].Imagebox = Resources.jisu2;
-                LT[i].MainImage = Resources.jisu2;
+                LT[i].Imagebox = Resources.jisu;
+                LT[i].MainImage = LT[i].LP[0].Image_main;
+                LT[i].Music_name= "러블리즈_Sweet Dream.mp3";
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
                     flowLayoutPanel1.Controls.Clear();

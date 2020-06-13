@@ -40,8 +40,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.textPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPassword_check = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,9 +67,6 @@
             this.IdBox.Name = "IdBox";
             this.IdBox.SelectionColor = System.Drawing.Color.White;
             this.IdBox.Size = new System.Drawing.Size(432, 53);
-            this.IdBox.Click += new System.EventHandler(this.Idbox_Click);
-            this.IdBox.Enter += new System.EventHandler(this.Idbox_Enter);
-            this.IdBox.Leave += new System.EventHandler(this.Idbox_Leave);
             // 
             // shapeContainer1
             // 
@@ -100,11 +98,13 @@
             this.btnLogin.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogin.CornerRadius = 15;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FillColor = System.Drawing.Color.LightGray;
             this.btnLogin.Location = new System.Drawing.Point(171, 539);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(111, 53);
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
+            this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
             // Password_check_box
             // 
@@ -117,9 +117,6 @@
             this.Password_check_box.Name = "Password_check_box";
             this.Password_check_box.SelectionColor = System.Drawing.Color.White;
             this.Password_check_box.Size = new System.Drawing.Size(432, 53);
-            this.Password_check_box.Click += new System.EventHandler(this.Password_check_box_Click);
-            this.Password_check_box.Enter += new System.EventHandler(this.Password_check_box_Enter);
-            this.Password_check_box.Leave += new System.EventHandler(this.Password_check_box_Leave);
             // 
             // passwordbox
             // 
@@ -132,9 +129,6 @@
             this.passwordbox.Name = "passwordbox";
             this.passwordbox.SelectionColor = System.Drawing.Color.White;
             this.passwordbox.Size = new System.Drawing.Size(432, 53);
-            this.passwordbox.Click += new System.EventHandler(this.passwordbox_Click);
-            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
-            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
             // 
             // label2
             // 
@@ -182,12 +176,12 @@
             this.label1.Size = new System.Drawing.Size(16, 16);
             this.label1.TabIndex = 34;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtId
             // 
             this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtId.ForeColor = System.Drawing.Color.Gray;
             this.txtId.HideSelection = false;
@@ -197,29 +191,31 @@
             this.txtId.Size = new System.Drawing.Size(387, 21);
             this.txtId.TabIndex = 35;
             this.txtId.Text = "아이디";
+            this.txtId.Click += new System.EventHandler(this.txtId_hint_On_Off);
+            this.txtId.TextChanged += new System.EventHandler(this.Button_Activation);
+            this.txtId.Leave += new System.EventHandler(this.txtId_hint_On_Off);
             // 
-            // textPassword
+            // txtPassword
             // 
-            this.textPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPassword.Enabled = false;
-            this.textPassword.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.textPassword.ForeColor = System.Drawing.Color.Gray;
-            this.textPassword.HideSelection = false;
-            this.textPassword.Location = new System.Drawing.Point(42, 385);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.PasswordChar = '*';
-            this.textPassword.ShortcutsEnabled = false;
-            this.textPassword.Size = new System.Drawing.Size(387, 21);
-            this.textPassword.TabIndex = 36;
-            this.textPassword.Text = "비밀번호";
-            this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txtPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtPassword.HideSelection = false;
+            this.txtPassword.Location = new System.Drawing.Point(42, 385);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.ShortcutsEnabled = false;
+            this.txtPassword.Size = new System.Drawing.Size(387, 21);
+            this.txtPassword.TabIndex = 36;
+            this.txtPassword.Text = "비밀번호";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_hint_On_Off);
+            this.txtPassword.TextChanged += new System.EventHandler(this.Button_Activation);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_hint_On_Off);
             // 
             // txtPassword_check
             // 
             this.txtPassword_check.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
             this.txtPassword_check.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword_check.Enabled = false;
             this.txtPassword_check.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtPassword_check.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword_check.HideSelection = false;
@@ -229,6 +225,18 @@
             this.txtPassword_check.Size = new System.Drawing.Size(387, 21);
             this.txtPassword_check.TabIndex = 37;
             this.txtPassword_check.Text = "비밀번호 확인";
+            this.txtPassword_check.Click += new System.EventHandler(this.txtPassword_check_hint_On_Off);
+            this.txtPassword_check.TextChanged += new System.EventHandler(this.Button_Activation);
+            this.txtPassword_check.Leave += new System.EventHandler(this.txtPassword_check_hint_On_Off);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(39, 518);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 12);
+            this.label3.TabIndex = 38;
             // 
             // SingUp
             // 
@@ -236,8 +244,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(491, 691);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword_check);
-            this.Controls.Add(this.textPassword);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
@@ -270,7 +279,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtPassword_check;
+        private System.Windows.Forms.Label label3;
     }
 }

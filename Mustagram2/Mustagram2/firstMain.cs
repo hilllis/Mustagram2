@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mustagram2.Properties;
 using System.Runtime.InteropServices;
+using WMPLib;
 
 namespace Mustagram2
 {
     public partial class firstMain : UserControl
     {
 
-        listItem[] LT = new listItem[10];
+        public listItem[] LT = new listItem[10];
        
         int listIndex = 0;
-
+        
         public firstMain()
         {
             InitializeComponent();
@@ -48,7 +49,10 @@ namespace Mustagram2
 
             if (e.Delta > 0)
             {
-
+                if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    LT[listIndex].player.controls.stop();
+                }
                 if (listIndex > 0)
                 {
                     listIndex -= 1;
@@ -56,17 +60,23 @@ namespace Mustagram2
                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
 
                 }
+                
 
 
             }
             else
             {
+                if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    LT[listIndex].player.controls.stop();
+                }
                 if (listIndex < LT.Length - 1)
                 {
                     listIndex += 1;
                     flowLayoutPanel1.Controls.Clear();
                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
                 }
+
 
             }
         }
@@ -83,7 +93,10 @@ namespace Mustagram2
 
         private void exit_Click_1(object sender, EventArgs e)
         {
-
+            if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                LT[listIndex].player.controls.stop();
+            }
             MainDisplay.ActiveForm.Close();
         }
 

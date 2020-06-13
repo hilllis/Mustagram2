@@ -50,7 +50,7 @@ namespace Mustagram2
         }
         private void populateItems()
         {
-            // panel1.Controls.Clear();
+            panel1.Controls.Clear();
             panel1.Controls.Add(fM);
         }
 

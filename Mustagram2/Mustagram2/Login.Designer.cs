@@ -95,6 +95,9 @@
             this.btnLogin.SelectionColor = System.Drawing.Color.Honeydew;
             this.btnLogin.Size = new System.Drawing.Size(432, 53);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
+            this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
+            this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
             // passwordbox
             // 
@@ -107,8 +110,6 @@
             this.passwordbox.Name = "passwordbox";
             this.passwordbox.SelectionColor = System.Drawing.Color.White;
             this.passwordbox.Size = new System.Drawing.Size(432, 53);
-            this.passwordbox.Enter += new System.EventHandler(this.passwordbox_Enter);
-            this.passwordbox.Leave += new System.EventHandler(this.passwordbox_Leave);
             // 
             // Idbox
             // 
@@ -121,15 +122,11 @@
             this.Idbox.Name = "Idbox";
             this.Idbox.SelectionColor = System.Drawing.Color.White;
             this.Idbox.Size = new System.Drawing.Size(432, 53);
-            this.Idbox.Click += new System.EventHandler(this.Idbox_Click);
-            this.Idbox.Enter += new System.EventHandler(this.Idbox_Enter);
-            this.Idbox.Leave += new System.EventHandler(this.Idbox_Leave);
             // 
             // txtId
             // 
             this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtId.ForeColor = System.Drawing.Color.Gray;
             this.txtId.HideSelection = false;
@@ -139,12 +136,14 @@
             this.txtId.Size = new System.Drawing.Size(387, 21);
             this.txtId.TabIndex = 32;
             this.txtId.Text = "아이디";
+            this.txtId.Click += new System.EventHandler(this.txtId_hint_On_Off);
+            this.txtId.TextChanged += new System.EventHandler(this.Button_Activation);
+            this.txtId.Leave += new System.EventHandler(this.txtId_hint_On_Off);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword.Location = new System.Drawing.Point(47, 385);
@@ -153,6 +152,9 @@
             this.txtPassword.Size = new System.Drawing.Size(387, 21);
             this.txtPassword.TabIndex = 33;
             this.txtPassword.Text = "비밀번호";
+            this.txtPassword.TextChanged += new System.EventHandler(this.Button_Activation);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_hint_On_Off);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_hint_On_Off);
             // 
             // label2
             // 
@@ -238,10 +240,12 @@
             // timer1
             // 
             this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // timer2
             // 
             this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick_1);
             // 
             // Login
             // 
@@ -261,6 +265,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(491, 691);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

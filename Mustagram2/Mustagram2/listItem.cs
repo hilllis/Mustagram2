@@ -15,6 +15,7 @@ namespace Mustagram2
     public partial class listItem : UserControl
     {
         int PrevY=0;
+        bool isCollapsed=true;
         firstMain md;
         hostPro hP = new hostPro();
         public WindowsMediaPlayer player = new WindowsMediaPlayer();
@@ -205,23 +206,38 @@ namespace Mustagram2
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("cloc");
-            md.test();
-            //timer1.Start();
+            hostPro1.Visible = true;
+            // md.test();
+            timer1.Start();
             // panel7.Controls.Add(hP);
-           hostPro1.Visible = true;
+       
             
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            hP.Height += 10;
-            if (hP.Height == hP.MaximumSize.Height)
+            if (isCollapsed)
             {
-                timer1.Stop();
-                this.TopMost = false;
-                hP.TopMost = true;
+                hostPro1.Height += 10;
+                if (hostPro1.Size == hostPro1.MaximumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = false;
+             
 
+                }
+            }
+            else
+            {
+                hostPro1.Height -= 10;
+
+                if (hostPro1.Size == hostPro1.MinimumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = true;
+                    hostPro1.Visible = false;
+
+                }
             }
         }
     } 

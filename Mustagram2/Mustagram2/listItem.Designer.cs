@@ -47,10 +47,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lvw_comment_icon = new System.Windows.Forms.PictureBox();
+            this.lvw_heart1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel2 = new System.Windows.Forms.Panel();
             this.music = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -62,10 +66,6 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.c = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lvw_comment_icon = new System.Windows.Forms.PictureBox();
-            this.lvw_heart1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvw_profile2 = new Mustagram.CiclePicture();
             this.hostPro1 = new Mustagram2.hostPro();
             this.lvw_main = new Mustagram2.listPictiure();
@@ -76,12 +76,12 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_comment_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             this.SuspendLayout();
@@ -264,6 +264,26 @@
             this.panel3.Size = new System.Drawing.Size(491, 45);
             this.panel3.TabIndex = 7;
             // 
+            // lvw_comment_icon
+            // 
+            this.lvw_comment_icon.Image = global::Mustagram2.Properties.Resources.comment;
+            this.lvw_comment_icon.Location = new System.Drawing.Point(0, 3);
+            this.lvw_comment_icon.Name = "lvw_comment_icon";
+            this.lvw_comment_icon.Size = new System.Drawing.Size(38, 39);
+            this.lvw_comment_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.lvw_comment_icon.TabIndex = 1;
+            this.lvw_comment_icon.TabStop = false;
+            // 
+            // lvw_heart1
+            // 
+            this.lvw_heart1.Image = global::Mustagram2.Properties.Resources.strokeheart;
+            this.lvw_heart1.Location = new System.Drawing.Point(441, 5);
+            this.lvw_heart1.Name = "lvw_heart1";
+            this.lvw_heart1.Size = new System.Drawing.Size(38, 39);
+            this.lvw_heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.lvw_heart1.TabIndex = 0;
+            this.lvw_heart1.TabStop = false;
+            // 
             // shapeContainer6
             // 
             this.shapeContainer6.Location = new System.Drawing.Point(0, 0);
@@ -309,6 +329,31 @@
             this.music.TabIndex = 16;
             this.music.Text = "music";
             this.music.Click += new System.EventHandler(this.music_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Mustagram2.Properties.Resources.left;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 143);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.left);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.right;
+            this.pictureBox1.Location = new System.Drawing.Point(463, 143);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Right);
             // 
             // shapeContainer2
             // 
@@ -375,6 +420,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("굴림", 5F);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(454, 31);
@@ -416,52 +462,8 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lvw_comment_icon
-            // 
-            this.lvw_comment_icon.Image = global::Mustagram2.Properties.Resources.comment;
-            this.lvw_comment_icon.Location = new System.Drawing.Point(0, 3);
-            this.lvw_comment_icon.Name = "lvw_comment_icon";
-            this.lvw_comment_icon.Size = new System.Drawing.Size(38, 39);
-            this.lvw_comment_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.lvw_comment_icon.TabIndex = 1;
-            this.lvw_comment_icon.TabStop = false;
-            // 
-            // lvw_heart1
-            // 
-            this.lvw_heart1.Image = global::Mustagram2.Properties.Resources.strokeheart;
-            this.lvw_heart1.Location = new System.Drawing.Point(441, 5);
-            this.lvw_heart1.Name = "lvw_heart1";
-            this.lvw_heart1.Size = new System.Drawing.Size(38, 39);
-            this.lvw_heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.lvw_heart1.TabIndex = 0;
-            this.lvw_heart1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Mustagram2.Properties.Resources.left;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 143);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.left);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.right;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 143);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Right);
             // 
             // lvw_profile2
             // 
@@ -480,8 +482,9 @@
             this.hostPro1.Location = new System.Drawing.Point(1, 2);
             this.hostPro1.Margin = new System.Windows.Forms.Padding(0);
             this.hostPro1.MaximumSize = new System.Drawing.Size(491, 197);
+            this.hostPro1.MinimumSize = new System.Drawing.Size(491, 10);
             this.hostPro1.Name = "hostPro1";
-            this.hostPro1.Size = new System.Drawing.Size(491, 197);
+            this.hostPro1.Size = new System.Drawing.Size(491, 10);
             this.hostPro1.TabIndex = 17;
             this.hostPro1.Visible = false;
             // 
@@ -528,14 +531,14 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_comment_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             this.ResumeLayout(false);

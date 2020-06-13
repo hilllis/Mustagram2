@@ -16,7 +16,7 @@ namespace Mustagram2
     {
         int PrevY=0;
         firstMain md;
-          hostPro hP = new hostPro();
+        hostPro hP = new hostPro();
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         double musiclocation = 0;
         public listPictiure[] LP = new listPictiure[4];

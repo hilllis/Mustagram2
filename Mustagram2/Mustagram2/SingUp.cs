@@ -34,8 +34,9 @@ namespace Mustagram2
             if (txtId.Text == "아이디")
             {
                 txtId.Enabled = true;
-                txtId.Focus();
+               
                 txtId.Text = "";
+                txtId.Focus();
                 txtId.ForeColor = Color.Black;
             }
         }

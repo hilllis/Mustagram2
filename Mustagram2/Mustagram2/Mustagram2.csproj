@@ -70,6 +70,18 @@
     <Compile Include="firstMain.Designer.cs">
       <DependentUpon>firstMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="HostCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HostCreate.Designer.cs">
+      <DependentUpon>HostCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hostPro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="hostPro.Designer.cs">
+      <DependentUpon>hostPro.cs</DependentUpon>
+    </Compile>
     <Compile Include="listItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <EmbeddedResource Include="firstMain.resx">
       <DependentUpon>firstMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostCreate.resx">
+      <DependentUpon>HostCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hostPro.resx">
+      <DependentUpon>hostPro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listItem.resx">
       <DependentUpon>listItem.cs</DependentUpon>
@@ -246,6 +264,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_heart2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picure_add.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

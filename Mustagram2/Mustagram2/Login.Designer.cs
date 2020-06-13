@@ -92,6 +92,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.LightGray;
             this.btnLogin.Location = new System.Drawing.Point(23, 471);
             this.btnLogin.Name = "btnLogin";
+            this.btnLogin.SelectionColor = System.Drawing.Color.Honeydew;
             this.btnLogin.Size = new System.Drawing.Size(432, 53);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

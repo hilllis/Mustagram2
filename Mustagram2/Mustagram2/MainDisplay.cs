@@ -18,7 +18,7 @@ namespace Mustagram2
     public partial class MainDisplay : Form
     {
 
-   
+        hostPro hP = new hostPro();
         firstMain fM = new firstMain();
         Log lg = new Log();
         int listIndex = 0;
@@ -63,6 +63,7 @@ namespace Mustagram2
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            pictureBox3.Image = Resources.strokeheart1;
             panel1.Controls.Clear();
             panel1.Controls.Add(fM);
         }
@@ -81,8 +82,21 @@ namespace Mustagram2
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            pictureBox3.Image = Resources.black_heart2;
             panel1.Controls.Clear();
             panel1.Controls.Add(lg);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HostCreate hc = new HostCreate();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(hc);
         }
     }
 }

@@ -73,6 +73,16 @@ namespace Mustagram2.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap black_heart2 {
+            get {
+                object obj = ResourceManager.GetObject("black_heart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap burger_line_list_menu_nav_navigation_option_icon_123231 {
             get {
                 object obj = ResourceManager.GetObject("burger_line_list_menu_nav_navigation_option_icon_123231", resourceCulture);
@@ -156,6 +166,16 @@ namespace Mustagram2.Properties {
         internal static System.Drawing.Bitmap MustaIcon {
             get {
                 object obj = ResourceManager.GetObject("MustaIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap picure_add {
+            get {
+                object obj = ResourceManager.GetObject("picure_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

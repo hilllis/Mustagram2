@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listItem));
             this.panel8 = new System.Windows.Forms.Panel();
             this.lvw_comment_display = new System.Windows.Forms.Panel();
             this.comentlabel = new System.Windows.Forms.Label();
-            this.lvw_profile2 = new Mustagram.CiclePicture();
             this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -47,40 +47,43 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lvw_comment_icon = new System.Windows.Forms.PictureBox();
-            this.lvw_heart1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lvw_name = new System.Windows.Forms.Label();
-            this.lvw_profile1 = new Mustagram.CiclePicture();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.c = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lvw_time = new System.Windows.Forms.Label();
-            this.lvw_main = new Mustagram2.listPictiure();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.hostPro1 = new Mustagram2.hostPro();
+            this.music = new System.Windows.Forms.Label();
+            this.lvw_main = new Mustagram2.listPictiure();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.music = new System.Windows.Forms.Label();
+            this.lvw_time = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lvw_name = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.c = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lvw_profile2 = new Mustagram.CiclePicture();
+            this.lvw_comment_icon = new System.Windows.Forms.PictureBox();
+            this.lvw_heart1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lvw_profile1 = new Mustagram.CiclePicture();
             this.panel8.SuspendLayout();
             this.lvw_comment_display.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_comment_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel8
@@ -91,8 +94,8 @@
             this.panel8.Controls.Add(this.panel4);
             this.panel8.Controls.Add(this.panel3);
             this.panel8.Controls.Add(this.panel2);
-            this.panel8.Controls.Add(this.panel1);
             this.panel8.Controls.Add(this.lvw_time);
+            this.panel8.Controls.Add(this.panel1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
@@ -121,17 +124,6 @@
             this.comentlabel.Size = new System.Drawing.Size(67, 15);
             this.comentlabel.TabIndex = 2;
             this.comentlabel.Text = "댓글 달기...";
-            // 
-            // lvw_profile2
-            // 
-            this.lvw_profile2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lvw_profile2.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile2.Image")));
-            this.lvw_profile2.Location = new System.Drawing.Point(19, 1);
-            this.lvw_profile2.Name = "lvw_profile2";
-            this.lvw_profile2.Size = new System.Drawing.Size(40, 40);
-            this.lvw_profile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lvw_profile2.TabIndex = 6;
-            this.lvw_profile2.TabStop = false;
             // 
             // shapeContainer5
             // 
@@ -272,26 +264,6 @@
             this.panel3.Size = new System.Drawing.Size(491, 45);
             this.panel3.TabIndex = 7;
             // 
-            // lvw_comment_icon
-            // 
-            this.lvw_comment_icon.Image = global::Mustagram2.Properties.Resources.comment;
-            this.lvw_comment_icon.Location = new System.Drawing.Point(0, 3);
-            this.lvw_comment_icon.Name = "lvw_comment_icon";
-            this.lvw_comment_icon.Size = new System.Drawing.Size(38, 39);
-            this.lvw_comment_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.lvw_comment_icon.TabIndex = 1;
-            this.lvw_comment_icon.TabStop = false;
-            // 
-            // lvw_heart1
-            // 
-            this.lvw_heart1.Image = global::Mustagram2.Properties.Resources.strokeheart;
-            this.lvw_heart1.Location = new System.Drawing.Point(441, 5);
-            this.lvw_heart1.Name = "lvw_heart1";
-            this.lvw_heart1.Size = new System.Drawing.Size(38, 39);
-            this.lvw_heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.lvw_heart1.TabIndex = 0;
-            this.lvw_heart1.TabStop = false;
-            // 
             // shapeContainer6
             // 
             this.shapeContainer6.Location = new System.Drawing.Point(0, 0);
@@ -312,117 +284,9 @@
             this.lineShape8.Y1 = 44;
             this.lineShape8.Y2 = 44;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Mustagram2.Properties.Resources.left;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 143);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.left);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.right;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 143);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Right);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lvw_name);
-            this.panel1.Controls.Add(this.lvw_profile1);
-            this.panel1.Controls.Add(this.shapeContainer1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 64);
-            this.panel1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 5F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(448, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 7);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "●●●";
-            // 
-            // lvw_name
-            // 
-            this.lvw_name.AutoSize = true;
-            this.lvw_name.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.lvw_name.Location = new System.Drawing.Point(81, 21);
-            this.lvw_name.Name = "lvw_name";
-            this.lvw_name.Size = new System.Drawing.Size(69, 20);
-            this.lvw_name.TabIndex = 6;
-            this.lvw_name.Text = "Seo_jisu";
-            // 
-            // lvw_profile1
-            // 
-            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(26, 7);
-            this.lvw_profile1.Name = "lvw_profile1";
-            this.lvw_profile1.Size = new System.Drawing.Size(49, 49);
-            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lvw_profile1.TabIndex = 5;
-            this.lvw_profile1.TabStop = false;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.c});
-            this.shapeContainer1.Size = new System.Drawing.Size(491, 64);
-            this.shapeContainer1.TabIndex = 8;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // c
-            // 
-            this.c.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.c.Name = "c";
-            this.c.X1 = 0;
-            this.c.X2 = 491;
-            this.c.Y1 = 63;
-            this.c.Y2 = 63;
-            // 
-            // lvw_time
-            // 
-            this.lvw_time.AutoSize = true;
-            this.lvw_time.Location = new System.Drawing.Point(5, 568);
-            this.lvw_time.Name = "lvw_time";
-            this.lvw_time.Size = new System.Drawing.Size(29, 12);
-            this.lvw_time.TabIndex = 13;
-            this.lvw_time.Text = "시간";
-            // 
-            // lvw_main
-            // 
-            this.lvw_main.BackColor = System.Drawing.Color.White;
-            this.lvw_main.Image_main = null;
-            this.lvw_main.Location = new System.Drawing.Point(0, 2);
-            this.lvw_main.Margin = new System.Windows.Forms.Padding(0);
-            this.lvw_main.Name = "lvw_main";
-            this.lvw_main.Size = new System.Drawing.Size(491, 302);
-            this.lvw_main.TabIndex = 15;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.hostPro1);
             this.panel2.Controls.Add(this.music);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -434,6 +298,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(491, 302);
             this.panel2.TabIndex = 8;
+            // 
+            // hostPro1
+            // 
+            this.hostPro1.BackColor = System.Drawing.Color.White;
+            this.hostPro1.Location = new System.Drawing.Point(1, 2);
+            this.hostPro1.Margin = new System.Windows.Forms.Padding(0);
+            this.hostPro1.MaximumSize = new System.Drawing.Size(491, 197);
+            this.hostPro1.Name = "hostPro1";
+            this.hostPro1.Size = new System.Drawing.Size(491, 197);
+            this.hostPro1.TabIndex = 17;
+            this.hostPro1.Visible = false;
+            // 
+            // music
+            // 
+            this.music.AutoSize = true;
+            this.music.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.music.Location = new System.Drawing.Point(15, 28);
+            this.music.Name = "music";
+            this.music.Size = new System.Drawing.Size(49, 23);
+            this.music.TabIndex = 16;
+            this.music.Text = "music";
+            this.music.Click += new System.EventHandler(this.music_Click);
+            // 
+            // lvw_main
+            // 
+            this.lvw_main.BackColor = System.Drawing.Color.White;
+            this.lvw_main.Image_main = null;
+            this.lvw_main.Location = new System.Drawing.Point(0, 2);
+            this.lvw_main.Margin = new System.Windows.Forms.Padding(0);
+            this.lvw_main.Name = "lvw_main";
+            this.lvw_main.Size = new System.Drawing.Size(491, 302);
+            this.lvw_main.TabIndex = 15;
             // 
             // shapeContainer2
             // 
@@ -475,16 +371,140 @@
             this.lineShape1.Y1 = 301;
             this.lineShape1.Y2 = 301;
             // 
-            // music
+            // lvw_time
             // 
-            this.music.AutoSize = true;
-            this.music.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.music.Location = new System.Drawing.Point(15, 28);
-            this.music.Name = "music";
-            this.music.Size = new System.Drawing.Size(49, 23);
-            this.music.TabIndex = 16;
-            this.music.Text = "music";
-            this.music.Click += new System.EventHandler(this.music_Click);
+            this.lvw_time.AutoSize = true;
+            this.lvw_time.Location = new System.Drawing.Point(5, 568);
+            this.lvw_time.Name = "lvw_time";
+            this.lvw_time.Size = new System.Drawing.Size(29, 12);
+            this.lvw_time.TabIndex = 13;
+            this.lvw_time.Text = "시간";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lvw_name);
+            this.panel1.Controls.Add(this.lvw_profile1);
+            this.panel1.Controls.Add(this.shapeContainer1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(491, 64);
+            this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 5F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(454, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 7);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "●●●";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lvw_name
+            // 
+            this.lvw_name.AutoSize = true;
+            this.lvw_name.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.lvw_name.Location = new System.Drawing.Point(81, 21);
+            this.lvw_name.Name = "lvw_name";
+            this.lvw_name.Size = new System.Drawing.Size(69, 20);
+            this.lvw_name.TabIndex = 6;
+            this.lvw_name.Text = "Seo_jisu";
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.c});
+            this.shapeContainer1.Size = new System.Drawing.Size(491, 64);
+            this.shapeContainer1.TabIndex = 8;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // c
+            // 
+            this.c.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.c.Name = "c";
+            this.c.X1 = 0;
+            this.c.X2 = 491;
+            this.c.Y1 = 63;
+            this.c.Y2 = 63;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lvw_profile2
+            // 
+            this.lvw_profile2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lvw_profile2.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile2.Image")));
+            this.lvw_profile2.Location = new System.Drawing.Point(19, 1);
+            this.lvw_profile2.Name = "lvw_profile2";
+            this.lvw_profile2.Size = new System.Drawing.Size(40, 40);
+            this.lvw_profile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lvw_profile2.TabIndex = 6;
+            this.lvw_profile2.TabStop = false;
+            // 
+            // lvw_comment_icon
+            // 
+            this.lvw_comment_icon.Image = global::Mustagram2.Properties.Resources.comment;
+            this.lvw_comment_icon.Location = new System.Drawing.Point(0, 3);
+            this.lvw_comment_icon.Name = "lvw_comment_icon";
+            this.lvw_comment_icon.Size = new System.Drawing.Size(38, 39);
+            this.lvw_comment_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.lvw_comment_icon.TabIndex = 1;
+            this.lvw_comment_icon.TabStop = false;
+            // 
+            // lvw_heart1
+            // 
+            this.lvw_heart1.Image = global::Mustagram2.Properties.Resources.strokeheart;
+            this.lvw_heart1.Location = new System.Drawing.Point(441, 5);
+            this.lvw_heart1.Name = "lvw_heart1";
+            this.lvw_heart1.Size = new System.Drawing.Size(38, 39);
+            this.lvw_heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.lvw_heart1.TabIndex = 0;
+            this.lvw_heart1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Mustagram2.Properties.Resources.left;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 143);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.left);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.right;
+            this.pictureBox1.Location = new System.Drawing.Point(463, 143);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Right);
+            // 
+            // lvw_profile1
+            // 
+            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
+            this.lvw_profile1.Location = new System.Drawing.Point(26, 7);
+            this.lvw_profile1.Name = "lvw_profile1";
+            this.lvw_profile1.Size = new System.Drawing.Size(49, 49);
+            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lvw_profile1.TabIndex = 5;
+            this.lvw_profile1.TabStop = false;
             // 
             // listItem
             // 
@@ -501,7 +521,6 @@
             this.panel8.PerformLayout();
             this.lvw_comment_display.ResumeLayout(false);
             this.lvw_comment_display.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -509,15 +528,16 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_comment_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +582,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label music;
+        private System.Windows.Forms.Timer timer1;
+        private hostPro hostPro1;
     }
 }

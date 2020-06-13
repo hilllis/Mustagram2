@@ -15,6 +15,8 @@ namespace Mustagram2
     public partial class listItem : UserControl
     {
         int PrevY=0;
+        firstMain md;
+          hostPro hP = new hostPro();
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         double musiclocation = 0;
         public listPictiure[] LP = new listPictiure[4];
@@ -26,6 +28,33 @@ namespace Mustagram2
             pictureBox1.BackColor = Color.Transparent;
             pictureBox2.Parent = lvw_main.picure_main;
             pictureBox2.BackColor = Color.Transparent;
+            // panel7.Visible = false;
+            music.Parent = lvw_main.picure_main;
+            music.BackColor = Color.Transparent;
+            for (int i = 0; i < LP.Length; i++)
+            {
+                LP[i] = new listPictiure();
+
+
+
+            }
+
+
+            LP[0].Image_main = Resources.jisu;
+            LP[1].Image_main = Resources.jisu2;
+            LP[2].Image_main = Resources.soo;
+            LP[3].Image_main = Resources.seulgi;
+
+        }
+        public listItem(firstMain md)
+        {
+            InitializeComponent();
+            this.md = md;
+            pictureBox1.Parent = lvw_main.picure_main;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox2.Parent = lvw_main.picure_main;
+            pictureBox2.BackColor = Color.Transparent;
+           // panel7.Visible = false;
             music.Parent = lvw_main.picure_main;
             music.BackColor = Color.Transparent;
             for (int i = 0; i < LP.Length; i++)
@@ -106,6 +135,7 @@ namespace Mustagram2
         }
 
         public bool SCrollable { get; internal set; }
+        public bool TopMost { get; private set; }
 
 
         #endregion
@@ -144,12 +174,8 @@ namespace Mustagram2
                 Console.WriteLine("left {0}", pictureindex);
                 this.MainImage = LP[--pictureindex].Image_main;
             }
-            if (player.playState.ToString().Equals("wmppsPlaying"))
-            {
-                player.controls.stop();
-                Console.WriteLine(player.playState);
-                Console.WriteLine(player.status);
-            }
+            
+          
         }
 
         public void Right(object sender, EventArgs e)
@@ -159,12 +185,7 @@ namespace Mustagram2
                 Console.WriteLine("right {0}", pictureindex);
                 this.MainImage = LP[++pictureindex].Image_main;
             }
-            if (player.playState.ToString().Equals("wmppsPlaying"))
-            {
-                player.controls.stop();
-                Console.WriteLine(player.playState);
-                Console.WriteLine(player.status);
-            }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -180,6 +201,28 @@ namespace Mustagram2
         private void lvw_main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("cloc");
+            md.test();
+            //timer1.Start();
+            // panel7.Controls.Add(hP);
+           hostPro1.Visible = true;
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hP.Height += 10;
+            if (hP.Height == hP.MaximumSize.Height)
+            {
+                timer1.Stop();
+                this.TopMost = false;
+                hP.TopMost = true;
+
+            }
         }
     } 
 }

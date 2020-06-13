@@ -27,7 +27,7 @@ namespace Mustagram2
             this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
             for (int i = 0; i < LT.Length; i++)
             {
-                LT[i] = new listItem();
+                LT[i] = new listItem(this);
                 LT[i].Name = "Seo Jisu" + i.ToString();
                 LT[i].Imagebox = Resources.jisu;
                 LT[i].MainImage = LT[i].LP[0].Image_main;
@@ -69,6 +69,10 @@ namespace Mustagram2
                 }
 
             }
+        }
+        public void test()
+        {
+            Console.WriteLine("tetr");
         }
 
         private void exit_Click(object sender, EventArgs e)

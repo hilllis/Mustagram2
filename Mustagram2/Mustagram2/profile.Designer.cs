@@ -48,27 +48,26 @@
             this.pro_fix = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ciclePicture1 = new Mustagram.CiclePicture();
             this.lvw_profile1 = new Mustagram.CiclePicture();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -259,15 +258,29 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.shapeContainer3);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 238);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(491, 410);
             this.panel6.TabIndex = 1;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Underline);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(179)))), ((int)(((byte)(244)))));
+            this.label7.Location = new System.Drawing.Point(134, 306);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(216, 17);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "첫 번째 사진이나 동영상을 공유하세요";
             // 
             // label5
             // 
@@ -285,53 +298,30 @@
             this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer3.Name = "shapeContainer3";
             this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1,
-            this.rectangleShape3,
-            this.rectangleShape2,
-            this.rectangleShape1});
+            this.lineShape1});
             this.shapeContainer3.Size = new System.Drawing.Size(491, 410);
             this.shapeContainer3.TabIndex = 1;
             this.shapeContainer3.TabStop = false;
             // 
-            // rectangleShape3
+            // lineShape1
             // 
-            this.rectangleShape3.BackColor = System.Drawing.Color.Black;
-            this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape3.CornerRadius = 2;
-            this.rectangleShape3.FillColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rectangleShape3.Location = new System.Drawing.Point(239, 128);
-            this.rectangleShape3.Name = "rectangleShape3";
-            this.rectangleShape3.Size = new System.Drawing.Size(5, 45);
+            this.lineShape1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 491;
+            this.lineShape1.Y1 = 0;
+            this.lineShape1.Y2 = 0;
             // 
-            // rectangleShape2
+            // pictureBox3
             // 
-            this.rectangleShape2.BackColor = System.Drawing.Color.Black;
-            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape2.CornerRadius = 2;
-            this.rectangleShape2.FillGradientColor = System.Drawing.Color.Black;
-            this.rectangleShape2.Location = new System.Drawing.Point(220, 147);
-            this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(45, 5);
-            // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BackColor = System.Drawing.Color.White;
-            this.rectangleShape1.CornerRadius = 16;
-            this.rectangleShape1.Location = new System.Drawing.Point(208, 118);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(65, 65);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Underline);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(179)))), ((int)(((byte)(244)))));
-            this.label7.Location = new System.Drawing.Point(134, 306);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(216, 17);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "첫 번째 사진이나 동영상을 공유하세요";
+            this.pictureBox3.Image = global::Mustagram2.Properties.Resources.picure_add;
+            this.pictureBox3.Location = new System.Drawing.Point(181, 119);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(117, 80);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -343,26 +333,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.burger_line_list_menu_nav_navigation_option_icon_123231;
-            this.pictureBox1.Location = new System.Drawing.Point(414, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 491;
-            this.lineShape1.Y1 = 0;
-            this.lineShape1.Y2 = 0;
             // 
             // ciclePicture1
             // 
@@ -384,6 +354,16 @@
             this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lvw_profile1.TabIndex = 6;
             this.lvw_profile1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Mustagram2.Properties.Resources.burger_line_list_menu_nav_navigation_option_icon_123231;
+            this.pictureBox1.Location = new System.Drawing.Point(414, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // profile
             // 
@@ -410,10 +390,11 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,11 +425,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape3;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

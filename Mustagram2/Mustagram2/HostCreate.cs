@@ -44,6 +44,7 @@ namespace Mustagram2
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
+                ofd.Multiselect = true;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     pictureBox1.ImageLocation = ofd.FileName;

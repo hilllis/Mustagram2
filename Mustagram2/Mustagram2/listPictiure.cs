@@ -39,29 +39,11 @@ namespace Mustagram2
        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             
         }
 
-        private void music_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(name);
-            /*
-            string str = @"C:\Users\poop4\Desktop\유진하/";
-            Console.WriteLine(music.Text);
-            player.URL = str+ music.Text;
-            //  player.URL = @"C:\Users\poop4\Desktop\유진하/러블리즈_Sweet Dream.mp3";
-         
-                player.controls.play();
-                Console.WriteLine(player.status);
-
-            if (player.status == "연결중")
-            {
-                
-                player.controls.stop();
-                Console.WriteLine(player.playState);
-                Console.WriteLine(player.status);
-            }
-            */
-        }
+       
+        
     }
 }

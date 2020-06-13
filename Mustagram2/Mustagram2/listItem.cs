@@ -16,7 +16,7 @@ namespace Mustagram2
     {
         int PrevY=0;
         WindowsMediaPlayer player = new WindowsMediaPlayer();
-
+        double musiclocation = 0;
         public listPictiure[] LP = new listPictiure[4];
         int pictureindex = 0;
         public listItem()
@@ -62,7 +62,7 @@ namespace Mustagram2
                 music.Text = value;
                 string str = @"C:\Users\poop4\Desktop\유진하/";
                 Console.WriteLine(music.Text);
-                player.URL = str + music.Text;
+                player.URL =music.Text;
                 player.controls.stop();
                 Console.WriteLine(player.status);
             }
@@ -115,14 +115,23 @@ namespace Mustagram2
             Console.WriteLine(player.playState.ToString());
             Console.WriteLine(player.URL);
             
-            if (player.playState.ToString().Equals("wmppsReady"))
+            if (player.playState.ToString().Equals("wmppsReady")||player.playState.ToString().Equals("wmppsStopped") || player.playState.ToString().Equals("wmppsPaused"))
             {
+                player.URL = music.Text;
+
+                player.controls.currentPosition = musiclocation;
+                Console.WriteLine("play {0}", musiclocation);
                 player.controls.play();
+              
                 Console.WriteLine(player.status);
             }
-            if (player.playState.Equals("wmppsPlaying"))
+            if (player.playState.ToString().Equals("wmppsPlaying"))
             {
-                player.controls.stop();
+                Console.WriteLine("stop befoe {0}  ", player.controls.currentPosition);
+                player.controls.pause();
+                musiclocation = player.controls.currentPosition;
+                Console.WriteLine("stop after {0} ", player.controls.currentPosition);
+                //player.controls.pause();
                 Console.WriteLine(player.playState);
                 Console.WriteLine(player.status);
             }
@@ -130,11 +139,16 @@ namespace Mustagram2
         }
         public void left(object sender, EventArgs e)
         {
-
             if (0 < pictureindex)
             {
                 Console.WriteLine("left {0}", pictureindex);
                 this.MainImage = LP[--pictureindex].Image_main;
+            }
+            if (player.playState.ToString().Equals("wmppsPlaying"))
+            {
+                player.controls.stop();
+                Console.WriteLine(player.playState);
+                Console.WriteLine(player.status);
             }
         }
 
@@ -144,6 +158,12 @@ namespace Mustagram2
             {
                 Console.WriteLine("right {0}", pictureindex);
                 this.MainImage = LP[++pictureindex].Image_main;
+            }
+            if (player.playState.ToString().Equals("wmppsPlaying"))
+            {
+                player.controls.stop();
+                Console.WriteLine(player.playState);
+                Console.WriteLine(player.status);
             }
         }
 

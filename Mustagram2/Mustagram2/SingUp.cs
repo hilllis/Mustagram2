@@ -16,7 +16,7 @@ namespace Mustagram2
         public SingUp()
         {
             InitializeComponent();
-            textPassword.PlaceholderText("dsadsa");
+            //textPassword.PlaceholderText("dsadsa");
         }
 
         private void SingUp_Load(object sender, EventArgs e)

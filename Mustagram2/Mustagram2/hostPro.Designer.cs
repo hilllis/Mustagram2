@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button2
@@ -65,13 +67,18 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Underline);
             this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(0, 146);
+            this.button3.Location = new System.Drawing.Point(0, -41);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(491, 51);
             this.button3.TabIndex = 2;
             this.button3.Text = "취소";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // hostPro
             // 
@@ -83,8 +90,9 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaximumSize = new System.Drawing.Size(491, 197);
+            this.MinimumSize = new System.Drawing.Size(491, 10);
             this.Name = "hostPro";
-            this.Size = new System.Drawing.Size(491, 197);
+            this.Size = new System.Drawing.Size(491, 10);
             this.ResumeLayout(false);
 
         }
@@ -94,5 +102,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer timer1;
     }
 }

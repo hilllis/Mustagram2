@@ -21,7 +21,20 @@ namespace Mustagram2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Height -= 10;
+
+            if (this.Size == this.MinimumSize)
+            {
+                timer1.Stop();
+                this.Visible = false;
+
+            }
         }
     }
 }

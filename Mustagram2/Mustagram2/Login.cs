@@ -166,8 +166,8 @@ namespace Mustagram2
                 {
                     int x = btnLogin.Location.X;
                     int y = btnLogin.Location.Y;
-                    btnLogin.Location = new Point(x, y + 10);
-                    label2.Location = new Point(label2.Location.X, label2.Location.Y + 10);
+                    btnLogin.Location = new Point(x, y + 5);
+                    label2.Location = new Point(label2.Location.X, label2.Location.Y + 5);
                     btnMove = !btnMove;
                 }
             }
@@ -181,8 +181,8 @@ namespace Mustagram2
                 {
                     int x = btnLogin.Location.X;
                     int y = btnLogin.Location.Y;
-                    btnLogin.Location = new Point(x, y - 10);
-                    label2.Location = new Point(label2.Location.X, label2.Location.Y - 10);
+                    btnLogin.Location = new Point(x, y - 5);
+                    label2.Location = new Point(label2.Location.X, label2.Location.Y - 5);
                     btnMove = !btnMove;
                 }
             }

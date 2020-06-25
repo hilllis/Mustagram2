@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Mustagram2
 {
     public partial class SingUp : Form
     {
+        MustagramClient client = MustagramClient.GetClient();
         public virtual string PlaceholderText { get; set; }
         bool act = false;
         bool btnMove = true;
@@ -129,6 +131,7 @@ namespace Mustagram2
 
         private void label2_Click(object sender, EventArgs e)
         {
+            bool result = false;
           if (!txtPassword.Text.Equals(txtPassword_check.Text))
             {
                 MessageBox.Show("Password errer");
@@ -139,9 +142,32 @@ namespace Mustagram2
             }
             else
             {
-                 Console.WriteLine("Sign Up Id : {0}", txtId.Text);
+                Console.WriteLine("Sign Up Id : {0}", txtId.Text);
                 Console.WriteLine("Sign Up Password : {0}", txtPassword.Text);
-               
+
+                Func<Task> runAsync = async () =>
+                {
+                    try
+                    {
+                        if (await client.SendSignInInfo(txtId.Text.ToString(), txtPassword.Text.ToString()).ConfigureAwait(false))
+                        {
+                            result = true;
+                        }
+                    }
+                    catch (Exception q)
+                    {
+                        Console.WriteLine(q.Message);
+                    }
+                };
+                runAsync().GetAwaiter().GetResult();
+                if(result)
+                {
+                    MessageBox.Show("회원가입 성공!");
+                }
+                else
+                {
+                    MessageBox.Show("회원가입 실패!");
+                }
                 Close();
             }
         }
@@ -191,6 +217,12 @@ namespace Mustagram2
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.label2_Click(sender, e);
+
         }
     }
 }

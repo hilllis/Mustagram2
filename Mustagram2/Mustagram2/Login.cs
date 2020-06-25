@@ -217,7 +217,6 @@ namespace Mustagram2
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            Console.WriteLine("start");
             signUp.Left += 10;
             if (signUp.Left >= left + 400)
             {
@@ -230,7 +229,7 @@ namespace Mustagram2
 
         private void timer2_Tick_1(object sender, EventArgs e)
         {
-            Console.WriteLine("stop");
+
             signUp.Left -= 10;
             if (signUp.Left <= left)
             {

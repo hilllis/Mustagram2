@@ -193,6 +193,7 @@
     <Compile Include="SetUserInfo.Designer.cs">
       <DependentUpon>SetUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Set_User.cs" />
     <Compile Include="SingUp.cs">
       <SubType>Form</SubType>
     </Compile>

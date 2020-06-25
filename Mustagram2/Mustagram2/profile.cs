@@ -23,5 +23,10 @@ namespace Mustagram2
         {
 
         }
+
+        private void lvw_profile1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

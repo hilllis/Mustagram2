@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,7 +147,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(491, 20);
             this.textBox1.TabIndex = 47;
-            this.textBox1.Text = "comment";
             // 
             // label3
             // 
@@ -169,6 +169,7 @@
             this.btnLogin.Location = new System.Drawing.Point(356, 576);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(111, 53);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
@@ -183,11 +184,25 @@
             this.shapeContainer1.TabIndex = 51;
             this.shapeContainer1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Underline);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(393, 593);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 20);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "완료";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // HostCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
@@ -222,5 +237,6 @@
         private System.Windows.Forms.Label label3;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape btnLogin;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private System.Windows.Forms.Label label4;
     }
 }

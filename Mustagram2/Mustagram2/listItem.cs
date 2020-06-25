@@ -23,6 +23,7 @@ namespace Mustagram2
         double musiclocation = 0;
         public listPictiure[] LP = new listPictiure[4];
         int pictureindex = 0;
+        public int postnumber;
         MainDisplay maindis;
         public listItem(MainDisplay md)
         {
@@ -242,7 +243,7 @@ namespace Mustagram2
         private void lvw_comment_display_Click(object sender, EventArgs e)
         {
             Console.WriteLine("click");
-            maindis.commentdisplay_open();
+            maindis.commentdisplay_open(this.postnumber);
             //maindisplay.commentdispay();
         }
     } 

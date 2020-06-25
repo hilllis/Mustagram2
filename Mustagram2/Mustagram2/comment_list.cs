@@ -20,6 +20,7 @@ namespace Mustagram2
         private string _name;
         private string _comment;
         private Image _image;
+        private int _commentNum;
         [Category("Custom Props")]
         public string Name
         {
@@ -33,7 +34,12 @@ namespace Mustagram2
             get { return _comment; }
             set { _comment = value; txtComment.Text = value; }
         }
-
+        [Category("Custom Props")]
+        public int CommentNum
+        {
+            get { return _commentNum; }
+            set { _commentNum = value; }
+        }
         [Category("Custom Props")]
         public Image Imagebox
         {

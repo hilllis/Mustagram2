@@ -20,9 +20,10 @@ namespace Mustagram2
         Set_User setuser = Set_User.SetUser();
         MainDisplay maindisplay;
         List<Post> postList;
+        List<listItem> Lt = new List<listItem>();
         int listCount = 0;
         int listIndex = 0;
-        public listItem[] LT;
+        public listItem lt;
         public string[] U_ID;
         bool outsider = true;
 
@@ -30,68 +31,9 @@ namespace Mustagram2
         {
             InitializeComponent();
             this.maindisplay = maindisplay;
-            string User_ID = setuser.getUser_id();
+            this.update();
 
-            Func<Task> runAsync = async () =>
-           {
-               try
-               {
-                   postList = await client.GetFriendsPost(User_ID).ConfigureAwait(false);
-                   Console.WriteLine(User_ID);
-                   Console.WriteLine(postList.Count);
-                   listCount = postList.Count();
-                   U_ID = new string[listCount];
-                   int j = 0;
-                   if (listCount > 0)
-                   {
-                       outsider = false;
-                       foreach (var postItem in postList)
-                       {
-                           Console.WriteLine(postItem.userNumber);
 
-                           U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
-                           j++;
-                       }
-                   }
-               }
-               catch (Exception q)
-               {
-                   Console.WriteLine(q.Message);
-               }
-           };
-            runAsync().GetAwaiter().GetResult();
-            int i = 0;
-            if (outsider)
-            {
-                
-               
-                Console.WriteLine("OutSider!");
-            }
-
-            else
-            {
-                LT = new listItem[listCount];
-                this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
-    
-                foreach (var postItem in postList)
-                {
-
-                    LT[i] = new listItem(maindisplay);
-                    LT[i].Name = U_ID[i];
-                    LT[i].Imagebox = Resources.jisu;
-                    LT[i].MainImage = LT[i].LP[0].Image_main;
-                    LT[i].Music_name = "러블리즈_Sweet Dream.mp3";
-                    LT[i].time = postItem.time;
-                    LT[i].Message = postItem.content;
-                    i++;
-                    if (flowLayoutPanel1.Controls.Count < 0)
-                    {
-                        flowLayoutPanel1.Controls.Clear();
-                    }
-                    Console.WriteLine("lovelz");
-                }
-                flowLayoutPanel1.Controls.Add(LT[0]);
-            }
         }
 
         private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
@@ -99,29 +41,30 @@ namespace Mustagram2
 
             if (e.Delta > 0)
             {
-                if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                if (Lt[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
-                    LT[listIndex].player.controls.stop();
+                    Lt[listIndex].player.controls.stop();
                 }
                 if (listIndex > 0)
                 {
                     listIndex -= 1;
                     flowLayoutPanel1.Controls.Clear();
-                    flowLayoutPanel1.Controls.Add(LT[listIndex]);
-
+                    flowLayoutPanel1.Controls.Add(Lt[listIndex]);
+                    Console.WriteLine(Lt[listIndex].postnumber);
                 }
             }
             else
             {
-                if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                if (Lt[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
-                    LT[listIndex].player.controls.stop();
+                    Lt[listIndex].player.controls.stop();
                 }
                 if (listIndex < listCount - 1)
                 {
                     listIndex += 1;
                     flowLayoutPanel1.Controls.Clear();
-                    flowLayoutPanel1.Controls.Add(LT[listIndex]);
+                    flowLayoutPanel1.Controls.Add(Lt[listIndex]);
+                    Console.WriteLine(Lt[listIndex].postnumber);
                 }
 
 
@@ -137,12 +80,77 @@ namespace Mustagram2
 
 
         }
+        public void update()
+        {
+            string User_ID = setuser.getUser_id();
+            postList = new List<Post>();
+            Func<Task> runAsync = async () =>
+            {
+                try
+                {
+                    postList = await client.GetFriendsPost(User_ID).ConfigureAwait(false);
+                    Console.WriteLine(User_ID);
+                    Console.WriteLine(postList.Count);
+                    listCount = postList.Count();
+                    U_ID = new string[listCount];
+                    int j = 0;
+                    if (listCount > 0)
+                    {
+                        outsider = false;
+                        foreach (var postItem in postList)
+                        {
+                            Console.WriteLine(postItem.userNumber);
 
+                            U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
+                            j++;
+                        }
+                    }
+                }
+                catch (Exception q)
+                {
+                    Console.WriteLine(q.Message);
+                }
+            };
+            runAsync().GetAwaiter().GetResult();
+            int i = 0;
+            if (outsider)
+            {
+                Console.WriteLine("OutSider!");
+            }
+
+            else
+            {
+
+                this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
+
+                foreach (var postItem in postList)
+                {
+                    this.lt = new listItem(maindisplay);
+                    lt.Name = U_ID[i] + i.ToString();
+                    lt.Imagebox = Resources.jisu;
+                    lt.postnumber = postItem.postNumber;
+                    lt.MainImage = Resources.seulgi;
+                    lt.Music_name = "러블리즈_Sweet Dream.mp3";
+
+                    lt.time = postItem.time;
+                    lt.Message = postItem.content;
+                    Lt.Add(lt);
+
+                    i++;
+                    if (flowLayoutPanel1.Controls.Count < 0)
+                    {
+                        flowLayoutPanel1.Controls.Clear();
+                    }
+                    Console.WriteLine("lovelz");
+                }
+                flowLayoutPanel1.Controls.Add(Lt[0]);
+            }
+        }
         private void exit_Click_1(object sender, EventArgs e)
         {
-            if (LT[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            if (Lt[listIndex].player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                LT[listIndex].player.controls.stop();
+                Lt[listIndex].player.controls.stop();
             }
             MainDisplay.ActiveForm.Close();
         }

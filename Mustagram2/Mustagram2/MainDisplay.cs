@@ -68,10 +68,10 @@ namespace Mustagram2
             panel1.Controls.Add(fM);
         }
 
-        public void commentdisplay_open()
+        public void commentdisplay_open(int postnumber)
         {
            
-            CommentDisplay cd = new CommentDisplay(this);
+            CommentDisplay cd = new CommentDisplay(this, postnumber);
             panel1.Controls.Clear();
             panel1.Controls.Add(cd);
         }
@@ -102,7 +102,11 @@ namespace Mustagram2
         {
            
         }
-
+        public void listRender()
+        {
+           // panel1.Controls.Clear();
+            //panel1.Controls.Add(fM);
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             HostCreate hc = new HostCreate();

@@ -70,6 +70,21 @@ namespace Mustagram2
                 return response.IsSuccessStatusCode;
             };
         }
+        public async Task<bool> UploadProfileImage(string id, string path)
+        {
+            var multiFormDataContent = new MultipartFormDataContent();
+            var stringContent = new StringContent(id);
+            using (FileStream fs = File.OpenRead(path))
+            {
+                var streamContent = new StreamContent(fs);
+                var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync().ConfigureAwait(false));
+                multiFormDataContent.Add(stringContent, "id");
+                multiFormDataContent.Add(fileContent, "files", Path.GetFileName(path));
+
+                var response = await client.PostAsync("/file/profile/upload", multiFormDataContent).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            };
+        }
         public async Task<bool> UploadFilesAsync(string[] filePaths)
         {
             // 참고 링크
@@ -167,6 +182,14 @@ namespace Mustagram2
 
             return isSuccess(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
+        public async Task<List<Post>> GetMyPosts(string id)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/user/posts", new { id = id }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<List<Post>>(responseBody);
+        }
         public async Task<bool> SendUnfollowRequest(string myId, string friendId)
         {
             var followRequest = new
@@ -253,9 +276,9 @@ namespace Mustagram2
             return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
         //
-        public async Task<bool> CreateComment(string id, int commentNumber, string comment)
+        public async Task<bool> CreateComment(string id, int postNumber, string comment)
         {
-            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/create", new { id = id, commentNumber = commentNumber, comment = comment }).ConfigureAwait(false);
+            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/create", new { id = id, postNumber = postNumber, comment = comment }).ConfigureAwait(false);
             res.EnsureSuccessStatusCode();
             return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
         }

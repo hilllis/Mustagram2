@@ -32,13 +32,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.txtboxIntro = new System.Windows.Forms.TextBox();
-            this.lvw_profile1 = new Mustagram.CiclePicture();
-            this.ciclePicture1 = new Mustagram.CiclePicture();
             this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.txtboxIntro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
+            this.ciclePicture1 = new Mustagram.CiclePicture();
+            this.lvw_profile1 = new Mustagram.CiclePicture();
             ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -75,41 +75,6 @@
             this.shapeContainer1.TabIndex = 40;
             this.shapeContainer1.TabStop = false;
             // 
-            // txtboxIntro
-            // 
-            this.txtboxIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.txtboxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxIntro.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.txtboxIntro.ForeColor = System.Drawing.Color.Gray;
-            this.txtboxIntro.HideSelection = false;
-            this.txtboxIntro.Location = new System.Drawing.Point(131, 107);
-            this.txtboxIntro.Name = "txtboxIntro";
-            this.txtboxIntro.ShortcutsEnabled = false;
-            this.txtboxIntro.Size = new System.Drawing.Size(286, 21);
-            this.txtboxIntro.TabIndex = 42;
-            // 
-            // lvw_profile1
-            // 
-            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(33, 19);
-            this.lvw_profile1.Name = "lvw_profile1";
-            this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
-            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lvw_profile1.TabIndex = 43;
-            this.lvw_profile1.TabStop = false;
-            // 
-            // ciclePicture1
-            // 
-            this.ciclePicture1.Image = global::Mustagram2.Properties.Resources.plus;
-            this.ciclePicture1.Location = new System.Drawing.Point(76, 56);
-            this.ciclePicture1.Name = "ciclePicture1";
-            this.ciclePicture1.Size = new System.Drawing.Size(24, 21);
-            this.ciclePicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ciclePicture1.TabIndex = 44;
-            this.ciclePicture1.TabStop = false;
-            this.ciclePicture1.Click += new System.EventHandler(this.ciclePicture1_Click);
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -125,6 +90,21 @@
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
+            // txtboxIntro
+            // 
+            this.txtboxIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.txtboxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxIntro.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.txtboxIntro.ForeColor = System.Drawing.Color.Gray;
+            this.txtboxIntro.HideSelection = false;
+            this.txtboxIntro.Location = new System.Drawing.Point(131, 107);
+            this.txtboxIntro.Margin = new System.Windows.Forms.Padding(0);
+            this.txtboxIntro.Name = "txtboxIntro";
+            this.txtboxIntro.ShortcutsEnabled = false;
+            this.txtboxIntro.Size = new System.Drawing.Size(286, 21);
+            this.txtboxIntro.TabIndex = 42;
+            this.txtboxIntro.TextChanged += new System.EventHandler(this.txtboxIntro_TextChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -136,6 +116,29 @@
             this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 45;
             this.label4.Text = "완료";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // ciclePicture1
+            // 
+            this.ciclePicture1.Image = global::Mustagram2.Properties.Resources.plus;
+            this.ciclePicture1.Location = new System.Drawing.Point(76, 56);
+            this.ciclePicture1.Name = "ciclePicture1";
+            this.ciclePicture1.Size = new System.Drawing.Size(24, 21);
+            this.ciclePicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ciclePicture1.TabIndex = 44;
+            this.ciclePicture1.TabStop = false;
+            this.ciclePicture1.Click += new System.EventHandler(this.ciclePicture1_Click);
+            // 
+            // lvw_profile1
+            // 
+            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
+            this.lvw_profile1.Location = new System.Drawing.Point(33, 19);
+            this.lvw_profile1.Name = "lvw_profile1";
+            this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
+            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lvw_profile1.TabIndex = 43;
+            this.lvw_profile1.TabStop = false;
             // 
             // profile_modified
             // 
@@ -150,8 +153,8 @@
             this.Controls.Add(this.shapeContainer1);
             this.Name = "profile_modified";
             this.Size = new System.Drawing.Size(491, 234);
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciclePicture1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

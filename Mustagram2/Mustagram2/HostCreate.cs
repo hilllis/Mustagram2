@@ -23,15 +23,10 @@ namespace Mustagram2
         MainDisplay md;
         public HostCreate(MainDisplay md)
         {
-         
-            this.md = md;
             //profiepath += setuser.getUser_id() + ".jpg";
-        
+            this.md = md;
             InitializeComponent();
-            string ps = "";
-            ps = profiepath;
-            ps += setuser.getUser_id() + ".jpg";
-            lvw_profile1.Load(ps);
+            //lvw_profile1.Load(profiepath);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -52,7 +47,7 @@ namespace Mustagram2
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     musicpath = ofd.FileName;
-                   // label3.Text = ofd.FileName;
+                    label3.Text = ofd.FileName;
                 }
             }
         }

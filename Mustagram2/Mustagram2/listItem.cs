@@ -73,7 +73,7 @@ namespace Mustagram2
                 music_name = value;
               
                 player.URL = music_name.ToString();
-                player.controls.play();
+                player.controls.stop();
             }
         }
         [Category("Custom Props")]

@@ -19,7 +19,6 @@ namespace Mustagram2
         string imagepath = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/";
         public profile()
         {
-          
             InitializeComponent();
             string User_ID = setuser.getUser_id();
             string userIntro = "";
@@ -28,10 +27,8 @@ namespace Mustagram2
             pro_ID.Text = User_ID.ToString();
             profile_modified2.setProfile(this);
             Console.WriteLine(User_ID);
-            string pro = "";
-            pro += imagepath + User_ID + ".jpg";
-            imagepath += User_ID + ".jpg";
-            lvw_profile1.Load(pro);
+           //imagepath += User_ID + ".jpg";
+            //lvw_profile1.Load(imagepath);
             Func<Task> runAsync = async () =>
             {
                 try
@@ -64,7 +61,7 @@ namespace Mustagram2
 
         private void label4_Click(object sender, EventArgs e)
         {
-       
+            Console.WriteLine("DSsd");
             profile_modified2.Visible = true;
             //this.Controls.Add(pm);
         }

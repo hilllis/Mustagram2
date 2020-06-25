@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(profile_modified));
+            this.label3 = new System.Windows.Forms.Label();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnLogin = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -40,6 +41,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             this.SuspendLayout();
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.label3.Location = new System.Drawing.Point(29, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 23);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Intro";
+            // 
             // rectangleShape1
             // 
             this.rectangleShape1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
@@ -47,7 +58,7 @@
             this.rectangleShape1.BorderColor = System.Drawing.Color.LightGray;
             this.rectangleShape1.CornerRadius = 15;
             this.rectangleShape1.FillColor = System.Drawing.Color.LightGray;
-            this.rectangleShape1.Location = new System.Drawing.Point(116, 70);
+            this.rectangleShape1.Location = new System.Drawing.Point(116, 98);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.SelectionColor = System.Drawing.Color.White;
             this.rectangleShape1.Size = new System.Drawing.Size(312, 38);
@@ -72,9 +83,9 @@
             this.btnLogin.CornerRadius = 15;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FillColor = System.Drawing.Color.LightGray;
-            this.btnLogin.Location = new System.Drawing.Point(192, 155);
+            this.btnLogin.Location = new System.Drawing.Point(181, 154);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 48);
+            this.btnLogin.Size = new System.Drawing.Size(111, 53);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
@@ -86,7 +97,7 @@
             this.txtboxIntro.Font = new System.Drawing.Font("Comic Sans MS", 11F);
             this.txtboxIntro.ForeColor = System.Drawing.Color.Gray;
             this.txtboxIntro.HideSelection = false;
-            this.txtboxIntro.Location = new System.Drawing.Point(130, 80);
+            this.txtboxIntro.Location = new System.Drawing.Point(131, 107);
             this.txtboxIntro.Margin = new System.Windows.Forms.Padding(0);
             this.txtboxIntro.Name = "txtboxIntro";
             this.txtboxIntro.ShortcutsEnabled = false;
@@ -100,7 +111,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Underline);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(217, 170);
+            this.label4.Location = new System.Drawing.Point(218, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 45;
@@ -110,7 +121,7 @@
             // ciclePicture1
             // 
             this.ciclePicture1.Image = global::Mustagram2.Properties.Resources.plus;
-            this.ciclePicture1.Location = new System.Drawing.Point(76, 90);
+            this.ciclePicture1.Location = new System.Drawing.Point(76, 56);
             this.ciclePicture1.Name = "ciclePicture1";
             this.ciclePicture1.Size = new System.Drawing.Size(24, 21);
             this.ciclePicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,7 +133,7 @@
             // 
             this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(33, 56);
+            this.lvw_profile1.Location = new System.Drawing.Point(33, 19);
             this.lvw_profile1.Name = "lvw_profile1";
             this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
             this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,6 +149,7 @@
             this.Controls.Add(this.ciclePicture1);
             this.Controls.Add(this.lvw_profile1);
             this.Controls.Add(this.txtboxIntro);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "profile_modified";
             this.Size = new System.Drawing.Size(491, 234);
@@ -149,6 +161,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label3;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.TextBox txtboxIntro;

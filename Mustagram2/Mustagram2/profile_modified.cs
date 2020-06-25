@@ -20,9 +20,12 @@ namespace Mustagram2
         string imagepath = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/";
         public profile_modified()
         {
-           // imagepath += setuser.getUser_id() + ".jpg";
-          //  lvw_profile1.Load(imagepath);
+         
             InitializeComponent();
+            string pos = "";
+            pos += imagepath + setuser.getUser_id() + ".jpg";
+             imagepath += setuser.getUser_id() + ".jpg";
+            lvw_profile1.Load(pos);
         }
         public void setProfile(profile prf)
         {

@@ -342,7 +342,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.music);
             this.panel2.Controls.Add(this.hostPro1);
             this.panel2.Controls.Add(this.shapeContainer2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -354,9 +353,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(436, 202);
+            this.pictureBox1.Size = new System.Drawing.Size(491, 287);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -364,9 +363,9 @@
             // music
             // 
             this.music.Image = global::Mustagram2.Properties.Resources.music1;
-            this.music.Location = new System.Drawing.Point(8, 30);
+            this.music.Location = new System.Drawing.Point(401, 21);
             this.music.Name = "music";
-            this.music.Size = new System.Drawing.Size(49, 40);
+            this.music.Size = new System.Drawing.Size(30, 28);
             this.music.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.music.TabIndex = 18;
             this.music.TabStop = false;
@@ -435,6 +434,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.music);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lvw_name);
             this.panel1.Controls.Add(this.lvw_profile1);

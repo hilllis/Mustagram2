@@ -57,7 +57,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.profile_modified1 = new Mustagram2.profile_modified();
+           // this.profile_modified1 = new Mustagram2.profile_modified();
             this.profile_modified2 = new Mustagram2.profile_modified();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();

@@ -19,12 +19,16 @@ namespace Mustagram2
             InitializeComponent();
             string User_ID = setuser.getUser_id();
             string userIntro = "";
+            int numFollowing = 0;
+            int numFollower = 0;
             pro_ID.Text = User_ID.ToString();
             Func<Task> runAsync = async () =>
             {
                 try
                 {
                     userIntro = await client.GetPersonalDescription(User_ID).ConfigureAwait(false);
+                    numFollowing = await client.GetFollowingCounts(User_ID).ConfigureAwait(false);
+                    numFollower = await client.GetFollowerCounts(User_ID).ConfigureAwait(false);
                 }
                 catch (Exception q)
                 {
@@ -33,6 +37,8 @@ namespace Mustagram2
             };
             runAsync().GetAwaiter().GetResult();
             pro_Name.Text = userIntro.ToString();
+            pro_follower.Text = numFollower.ToString();
+            pro_following.Text = numFollowing.ToString();
          }
 
         private void panel6_Paint(object sender, PaintEventArgs e)

@@ -242,7 +242,22 @@ namespace Mustagram2
 
             return JsonConvert.DeserializeObject<List<Comment>>(responseBody);
         }
-
+        public class FollowingCounts { public int following { get; set; } }
+        public class FollowerCounts { public int follower { get; set; } }
+        public async Task<int> GetFollowingCounts(string id)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followings", new { id = id }).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadAsAsync<FollowingCounts>().ConfigureAwait(false);
+            return result.following;
+        }
+        public async Task<int> GetFollowerCounts(string id)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followers", new { id = id }).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadAsAsync<FollowerCounts>().ConfigureAwait(false);
+            return result.follower;
+        }
         private bool isSuccess(String result) => result == "success";
     }
 }

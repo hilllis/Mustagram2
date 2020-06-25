@@ -22,7 +22,7 @@ using System.Collections.Generic;
 // 내 게시물 출력
 // 팔로워 숫자 가져오기
 // 유저 아이디 가져오기
-namespace FetchTest
+namespace Mustagram2
 {
     public class MustagramClient
     {
@@ -32,7 +32,7 @@ namespace FetchTest
         private static HttpClient GenrateClient()
         {
             var client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:3000/");
+            client.BaseAddress = new Uri("http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json")

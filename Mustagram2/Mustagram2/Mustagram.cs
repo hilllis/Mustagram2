@@ -13,15 +13,15 @@ using System.Collections.Generic;
 // 개인정보 가져오기
 // 게시물 좋아요 갯수
 // 댓글 좋아요 갯수
-// 친구 게시물 가져오기
-// ---------해야할 일---------
 // 본문 CRUD
-// 댓글 CRUD
-// 친구목록 가져오기
+// 친구 게시물 가져오기
 // 게시물 댓글 가져오기
+// 유저 아이디 가져오기
+// 댓글 CRUD
+// ---------해야할 일---------
+// 친구목록 가져오기
 // 내 게시물 출력
 // 팔로워 숫자 가져오기
-// 유저 아이디 가져오기
 namespace Mustagram2
 {
     public class MustagramClient
@@ -40,12 +40,43 @@ namespace Mustagram2
             return client;
         }
         public static MustagramClient GetClient() { return mustagramClient; }
+        public async Task<bool> UploadMusic(int postNumber, string path)
+        {
+            var multiFormDataContent = new MultipartFormDataContent();
+            var stringContent = new StringContent(postNumber.ToString());
+            using (FileStream fs = File.OpenRead(path))
+            {
+                var streamContent = new StreamContent(fs);
+                var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync().ConfigureAwait(false));
+                multiFormDataContent.Add(stringContent, "postNumber");
+                multiFormDataContent.Add(fileContent, "files", Path.GetFileName(path));
+
+                var response = await client.PostAsync("/file/music/upload", multiFormDataContent).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            };
+        }
+        public async Task<bool> UploadImage(int postNumber, string path)
+        {
+            var multiFormDataContent = new MultipartFormDataContent();
+            var stringContent = new StringContent(postNumber.ToString());
+            using (FileStream fs = File.OpenRead(path))
+            {
+                var streamContent = new StreamContent(fs);
+                var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync().ConfigureAwait(false));
+                multiFormDataContent.Add(stringContent, "postNumber");
+                multiFormDataContent.Add(fileContent, "files", Path.GetFileName(path));
+
+                var response = await client.PostAsync("/file/image/upload", multiFormDataContent).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            };
+        }
         public async Task<bool> UploadFilesAsync(string[] filePaths)
         {
             // 참고 링크
             // https://stackoverflow.com/questions/12968138/how-to-upload-a-file-in-window-forms
             // https://stackoverflow.com/questions/57690968/how-to-post-two-files-at-once-to-an-api-in-windows-forms-c-sharp
             var multiFormDataContent = new MultipartFormDataContent();
+            var stringContent = new StringContent("postNumber");
 
             foreach (string path in filePaths)
             {
@@ -56,6 +87,7 @@ namespace Mustagram2
                 var streamContent = new StreamContent(fs);
                 var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync().ConfigureAwait(false));
                 multiFormDataContent.Add(fileContent, "files", Path.GetFileName(path));
+                // multiFormDataContent.Add(stringContent, postNumber.ToString());
             }
             var response = await client.PostAsync("/file/upload", multiFormDataContent).ConfigureAwait(false);
             return response.IsSuccessStatusCode;
@@ -172,7 +204,22 @@ namespace Mustagram2
             var result = await response.Content.ReadAsAsync<ContentLike>().ConfigureAwait(false);
             return result.like;
         }
-
+        public class FollowingCounts { public int following { get; set; } }
+        public class FollowerCounts { public int follower { get; set; } }
+        public async Task<int> GetFollowingCounts(string id)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followings", new { id = id }).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadAsAsync<FollowingCounts>().ConfigureAwait(false);
+            return result.following;
+        }
+        public async Task<int> GetFollowerCounts(string id)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followers", new { id = id }).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadAsAsync<FollowerCounts>().ConfigureAwait(false);
+            return result.follower;
+        }
         public async Task<String> GetStringAsync(string path)
         {
             string word = null;
@@ -206,8 +253,24 @@ namespace Mustagram2
             return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
         //
-        // public async Task<bool> 
-        // public class UserID { public string ID { get; set; } }
+        public async Task<bool> CreateComment(string id, int commentNumber, string comment)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/create", new { id = id, commentNumber = commentNumber, comment = comment }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
+        }
+        public async Task<bool> UpdateComment(string id, int commentNumber, string comment)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/update", new { id = id, commentNumber = commentNumber, comment = comment }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
+        }
+        public async Task<bool> Delete(string id, int commentNumber)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/delete", new { id = id, commentNumber = commentNumber }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
+        }
         public async Task<string> GetUserID(int userNumber)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync("/user/id", new { userNumber = userNumber }).ConfigureAwait(false);
@@ -242,22 +305,7 @@ namespace Mustagram2
 
             return JsonConvert.DeserializeObject<List<Comment>>(responseBody);
         }
-        public class FollowingCounts { public int following { get; set; } }
-        public class FollowerCounts { public int follower { get; set; } }
-        public async Task<int> GetFollowingCounts(string id)
-        {
-            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followings", new { id = id }).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsAsync<FollowingCounts>().ConfigureAwait(false);
-            return result.following;
-        }
-        public async Task<int> GetFollowerCounts(string id)
-        {
-            HttpResponseMessage response = await client.PostAsJsonAsync("/user/count-followers", new { id = id }).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsAsync<FollowerCounts>().ConfigureAwait(false);
-            return result.follower;
-        }
+
         private bool isSuccess(String result) => result == "success";
     }
 }

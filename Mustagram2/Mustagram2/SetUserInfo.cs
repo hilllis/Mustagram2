@@ -83,5 +83,10 @@ namespace Mustagram2
         {
             this.label4_Click(sender, e);        
         }
+
+        private void txtboxIntro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

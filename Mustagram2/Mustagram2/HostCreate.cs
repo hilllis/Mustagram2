@@ -52,6 +52,14 @@ namespace Mustagram2
             }
         }
 
-        
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

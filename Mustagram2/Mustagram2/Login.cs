@@ -137,7 +137,6 @@ namespace Mustagram2
                     }
 
 
-
                 }
                 catch (Exception q)
                 {
@@ -152,24 +151,7 @@ namespace Mustagram2
                     setuser.setUser_id(txtId.Text.ToString());
                     ma = new MainDisplay();
                     ma.Show();
-                   //if (ma.IsDisposed) // 컨트롤이 죽었으면
-                 //   {
-
-                     //   ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
-                      //  ma.Show();
-
-
-                  //  }
-                  //  else
-                  //  {
-                    //    ma.Show();
-
-                  //  }
-                    // if (ma.IsDisposed) // 컨트롤이 죽었으면
-                    //   {
-                    //   ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
-                    //  ma.Show();
-                    //  }
+                   
                 }
                 else
                 {

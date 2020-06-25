@@ -196,6 +196,12 @@
     <Compile Include="profile.Designer.cs">
       <DependentUpon>profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="profile_modified.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="profile_modified.Designer.cs">
+      <DependentUpon>profile_modified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScrollPanelMessageFilter.cs" />
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="profile.resx">
       <DependentUpon>profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile_modified.resx">
+      <DependentUpon>profile_modified.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

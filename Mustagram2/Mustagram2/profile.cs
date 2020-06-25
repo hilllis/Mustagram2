@@ -22,6 +22,7 @@ namespace Mustagram2
             int numFollowing = 0;
             int numFollower = 0;
             pro_ID.Text = User_ID.ToString();
+            Console.WriteLine(User_ID);
             Func<Task> runAsync = async () =>
             {
                 try
@@ -48,7 +49,13 @@ namespace Mustagram2
 
         private void lvw_profile1_Click(object sender, EventArgs e)
         {
+            this.label4_Click(sender, e);
+        }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+            profile_modified pm = new profile_modified();
+            this.Controls.Add(pm);
         }
     }
 }

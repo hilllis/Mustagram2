@@ -35,9 +35,6 @@ namespace Mustagram2
             for (int i = 0; i < LP.Length; i++)
             {
                 LP[i] = new listPictiure();
-
-
-
             }
 
 
@@ -61,9 +58,6 @@ namespace Mustagram2
             for (int i = 0; i < LP.Length; i++)
             {
                 LP[i] = new listPictiure();
-           
-
-
             }
          
 

@@ -10,39 +10,74 @@ using System.Windows.Forms;
 using Mustagram2.Properties;
 using System.Runtime.InteropServices;
 using WMPLib;
+using static Mustagram2.MustagramClient;
 
 namespace Mustagram2
 {
     public partial class firstMain : UserControl
     {
-
-        public listItem[] LT = new listItem[10];
-       
+        MustagramClient client = MustagramClient.GetClient();
+        Set_User setuser = Set_User.SetUser();
+        List<Post> postList;
+        int listCount = 0;
         int listIndex = 0;
-        
+        public listItem[] LT;
+        public string[] U_ID;
+
         public firstMain()
         {
             InitializeComponent();
-          
 
+            string User_ID = setuser.getUser_id();
+
+            Func<Task> runAsync = async () =>
+           {
+               try
+               {
+                   postList = await client.GetFriendsPost(User_ID).ConfigureAwait(false);
+                   Console.WriteLine(User_ID);
+                   Console.WriteLine(postList.Count);
+                   listCount = postList.Count();
+                   U_ID = new string[listCount];
+                   int j = 0;
+                   foreach (var postItem in postList)
+                   {
+                       Console.WriteLine(postItem.userNumber);
+                      
+                       U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
+                       j++;
+                       Console.WriteLine("Check");
+                   }
+               }
+               catch (Exception q)
+               {
+                   Console.WriteLine(q.Message);
+               }
+           };
+            runAsync().GetAwaiter().GetResult();
+
+            LT = new listItem[listCount];
             this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
-            for (int i = 0; i < LT.Length; i++)
+            int i = 0;
+            foreach (var postItem in postList)
             {
+                
                 LT[i] = new listItem(this);
-                LT[i].Name = "Seo Jisu" + i.ToString();
+                LT[i].Name = U_ID[i];
                 LT[i].Imagebox = Resources.jisu;
                 LT[i].MainImage = LT[i].LP[0].Image_main;
                 LT[i].Music_name= "러블리즈_Sweet Dream.mp3";
+                LT[i].time = postItem.time;
+                LT[i].Message = postItem.content;
+                i++;
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
                     flowLayoutPanel1.Controls.Clear();
                 }
-
-
+                Console.WriteLine("lovelz");
             }
             flowLayoutPanel1.Controls.Add(LT[0]);
         }
-
 
         private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -60,9 +95,6 @@ namespace Mustagram2
                     flowLayoutPanel1.Controls.Add(LT[listIndex]);
 
                 }
-                
-
-
             }
             else
             {
@@ -70,7 +102,7 @@ namespace Mustagram2
                 {
                     LT[listIndex].player.controls.stop();
                 }
-                if (listIndex < LT.Length - 1)
+                if (listIndex < listCount - 1)
                 {
                     listIndex += 1;
                     flowLayoutPanel1.Controls.Clear();

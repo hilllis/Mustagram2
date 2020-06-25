@@ -4,10 +4,11 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace FetchTest {
+namespace Mustagram2 {
   public class MustagramClient
   {
     private static HttpClient client = GenrateClient();
+    private static MustagramClient mustagramClient = new MustagramClient();
     private MustagramClient() { }
     private static HttpClient GenrateClient()
     {
@@ -19,8 +20,8 @@ namespace FetchTest {
       );
       return client;
     }
-    public static HttpClient GetClient() { return client; }
-    public static async Task<bool> UploadFilesAsync(string[] filePaths)
+    public static MustagramClient GetClient() { return mustagramClient; }
+    public async Task<bool> UploadFilesAsync(string[] filePaths)
     {
       // 참고 링크
       // https://stackoverflow.com/questions/12968138/how-to-upload-a-file-in-window-forms
@@ -51,7 +52,7 @@ namespace FetchTest {
     //   return info;
     // }
 
-    public static async Task<string> SendUserPersonalInfo(
+    public async Task<bool> SendUserPersonalInfo(
       string userId,
       string userName,
       string sex,
@@ -71,12 +72,13 @@ namespace FetchTest {
           "/user/personal/save", personalInfo
       );
       response.EnsureSuccessStatusCode();
-      return await response.Content.ReadAsStringAsync();
+      return isSuccess(await response.Content.ReadAsStringAsync());
     }
-    public static async Task<string> SendUserModifiedPersonalInfo(
+    public async Task<bool> SendUserModifiedPersonalInfo(
       string userId,
       string intro
-    ) {
+    )
+    {
       var personalInfo = new
       {
         id = userId,
@@ -86,9 +88,9 @@ namespace FetchTest {
           "/user/personal/modify", personalInfo
       );
       response.EnsureSuccessStatusCode();
-      return await response.Content.ReadAsStringAsync(); 
+      return isSuccess(await response.Content.ReadAsStringAsync());
     }
-    public static async Task<string> SendLoginInfo(string userId, string userPassword)
+    public async Task<bool> SendLoginInfo(string userId, string userPassword)
     {
       var loginInfo = new
       {
@@ -98,10 +100,10 @@ namespace FetchTest {
       HttpResponseMessage response = await client.PostAsJsonAsync("/user/login", loginInfo);
       response.EnsureSuccessStatusCode();
 
-      return await response.Content.ReadAsStringAsync();
+      return isSuccess(await response.Content.ReadAsStringAsync());
     }
 
-    public static async Task<string> SendSignInInfo(string userId, string userPassword)
+    public async Task<bool> SendSignInInfo(string userId, string userPassword)
     {
       var signInInfo = new
       {
@@ -111,29 +113,54 @@ namespace FetchTest {
       HttpResponseMessage response = await client.PostAsJsonAsync("/user/sign-in", signInInfo);
       response.EnsureSuccessStatusCode();
 
-      return await response.Content.ReadAsStringAsync();
+      return isSuccess(await response.Content.ReadAsStringAsync());
     }
-    public static async Task<string> SendFollowRequest(string myId, string friendId) {
-      var followRequest = new {
+    public async Task<bool> SendFollowRequest(string myId, string friendId)
+    {
+      var followRequest = new
+      {
         id = myId,
         friendId = friendId
       };
       HttpResponseMessage response = await client.PostAsJsonAsync("/user/follow", followRequest);
       response.EnsureSuccessStatusCode();
 
-      return await response.Content.ReadAsStringAsync();
+      return isSuccess(await response.Content.ReadAsStringAsync());
     }
-    public static async Task<string> SendUnfollowRequest(string myId, string friendId) {
-      var followRequest = new {
+    public async Task<bool> SendUnfollowRequest(string myId, string friendId)
+    {
+      var followRequest = new
+      {
         id = myId,
         friendId = friendId
       };
       HttpResponseMessage response = await client.PostAsJsonAsync("/user/unfollow", followRequest);
       response.EnsureSuccessStatusCode();
 
+      return isSuccess(await response.Content.ReadAsStringAsync());
+    }
+
+    public async Task<string> GetPersonalDescription(string id)
+    {
+      HttpResponseMessage response = await client.PostAsJsonAsync("/user/personal/get", new { id = id });
+      response.EnsureSuccessStatusCode();
       return await response.Content.ReadAsStringAsync();
     }
-    public static async Task<String> GetStringAsync(string path)
+
+    private class ResultType
+    {
+      public int id { get; set; }
+    }
+    public async Task<int> GetPostLike(int postNumber)
+    {
+      HttpResponseMessage response = await client.PostAsJsonAsync("/post/count-like", new { postNumber = postNumber });
+      response.EnsureSuccessStatusCode();
+
+      var result = await response.Content.ReadAsAsync<ResultType>();
+      return result.id;
+    }
+
+    public async Task<String> GetStringAsync(string path)
     {
       string word = null;
       HttpResponseMessage response = await client.GetAsync(path);
@@ -142,5 +169,8 @@ namespace FetchTest {
 
       return word;
     }
+
+    private bool isSuccess(String result) => result == "success";
+  }
   }
 }

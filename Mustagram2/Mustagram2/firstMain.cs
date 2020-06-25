@@ -41,13 +41,16 @@ namespace Mustagram2
                    listCount = postList.Count();
                    U_ID = new string[listCount];
                    int j = 0;
-                   foreach (var postItem in postList)
+                   if (listCount > 0)
                    {
-                       Console.WriteLine(postItem.userNumber);
-                      
-                       U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
-                       j++;
-                       Console.WriteLine("Check");
+                       outsider = false;
+                       foreach (var postItem in postList)
+                       {
+                           Console.WriteLine(postItem.userNumber);
+
+                           U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
+                           j++;
+                       }
                    }
                }
                catch (Exception q)
@@ -57,10 +60,7 @@ namespace Mustagram2
            };
             runAsync().GetAwaiter().GetResult();
 
-            LT = new listItem[listCount];
-            this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
-            int i = 0;
-            foreach (var postItem in postList)
+            if (outsider)
             {
                 
                 LT[i] = new listItem(maindisplay);
@@ -72,12 +72,33 @@ namespace Mustagram2
                 LT[i].Message = postItem.content;
                 i++;
                 if (flowLayoutPanel1.Controls.Count < 0)
-                {
-                    flowLayoutPanel1.Controls.Clear();
-                }
-                Console.WriteLine("lovelz");
+                Console.WriteLine("OutSider!");
             }
-            flowLayoutPanel1.Controls.Add(LT[0]);
+
+            else
+            {
+                LT = new listItem[listCount];
+                this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
+                int i = 0;
+                foreach (var postItem in postList)
+                {
+
+                    LT[i] = new listItem(this);
+                    LT[i].Name = U_ID[i];
+                    LT[i].Imagebox = Resources.jisu;
+                    LT[i].MainImage = LT[i].LP[0].Image_main;
+                    LT[i].Music_name = "러블리즈_Sweet Dream.mp3";
+                    LT[i].time = postItem.time;
+                    LT[i].Message = postItem.content;
+                    i++;
+                    if (flowLayoutPanel1.Controls.Count < 0)
+                    {
+                        flowLayoutPanel1.Controls.Clear();
+                    }
+                    Console.WriteLine("lovelz");
+                }
+                flowLayoutPanel1.Controls.Add(LT[0]);
+            }
         }
 
         private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)

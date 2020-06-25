@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 namespace Mustagram2 {
   public class MustagramClient
   {
-    private static HttpClient client = GenrateClient();
-    private MustagramClient() { }
-    private static HttpClient GenrateClient()
-    {
-      var client = new HttpClient();
-      client.BaseAddress = new Uri("ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000");
-      client.DefaultRequestHeaders.Accept.Clear();
-      client.DefaultRequestHeaders.Accept.Add(
-          new MediaTypeWithQualityHeaderValue("application/json")
-      );
-      return client;
-    }
-    public static HttpClient GetClient() { return client; }
-    public static async Task<bool> UploadFilesAsync(string[] filePaths)
+        private static HttpClient client = GenrateClient();
+        private static MustagramClient mustagramClient = new MustagramClient();
+        private MustagramClient() { }
+        private static HttpClient GenrateClient()
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json")
+            );
+            return client;
+        }
+        public static MustagramClient GetClient() { return mustagramClient; }
+        public static async Task<bool> UploadFilesAsync(string[] filePaths)
     {
       // 참고 링크
       // https://stackoverflow.com/questions/12968138/how-to-upload-a-file-in-window-forms
@@ -133,7 +134,28 @@ namespace Mustagram2 {
 
       return await response.Content.ReadAsStringAsync();
     }
-    public static async Task<String> GetStringAsync(string path)
+
+    private class ResultType
+    {
+      public int like { get; set; }
+    }
+    public async Task<int> GetPostLike(int postNumber)
+    {
+      HttpResponseMessage response = await client.PostAsJsonAsync("/post/count-like", new { postNumber = postNumber });
+      response.EnsureSuccessStatusCode();
+
+      var result = await response.Content.ReadAsAsync<ResultType>();
+      return result.like;
+    }
+    public async Task<int> GetCommentLike(int commentNumber) {
+      HttpResponseMessage response = await client.PostAsJsonAsync("/comment/count-like", new { commentNumber = commentNumber });
+      response.EnsureSuccessStatusCode();
+
+      var result = await response.Content.ReadAsAsync<ResultType>();
+      return result.like;
+    }
+
+    public async Task<String> GetStringAsync(string path)
     {
       string word = null;
       HttpResponseMessage response = await client.GetAsync(path);
@@ -142,5 +164,14 @@ namespace Mustagram2 {
 
       return word;
     }
+
+    public async Task<bool> CreatePost(string id, string content) {
+      HttpResponseMessage res = await client.PostAsJsonAsync("/post/create", new {id=id, content=content});
+      res.EnsureSuccessStatusCode();
+
+      return isSuccess(await res.Content.ReadAsStringAsync());
+    }
+
+    private bool isSuccess(String result) => result == "success";
   }
 }

@@ -16,6 +16,7 @@ namespace Mustagram2
     public partial class Login : Form
     {
         MustagramClient client = MustagramClient.GetClient();
+        Set_User setuser = Set_User.SetUser();
         SingUp signUp = new SingUp();
         MainDisplay ma = new MainDisplay();
 
@@ -148,6 +149,8 @@ namespace Mustagram2
                 runAsyn().GetAwaiter().GetResult();
                 if (result)
                 {
+                    setuser.setUser_id(txtId.Text.ToString());
+                    Console.WriteLine(setuser.getUser_id());
                     if (ma.IsDisposed) // 컨트롤이 죽었으면
                     {
                         ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다

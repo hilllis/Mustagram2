@@ -155,16 +155,13 @@ namespace Mustagram2
             return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
-        private class ResultType
-        {
-            public int like { get; set; }
-        }
+        private class ContentLike { public int like { get; set; } }
         public async Task<int> GetPostLike(int postNumber)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync("/post/count-like", new { postNumber = postNumber }).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadAsAsync<ResultType>().ConfigureAwait(false);
+            var result = await response.Content.ReadAsAsync<ContentLike>().ConfigureAwait(false);
             return result.like;
         }
         public async Task<int> GetCommentLike(int commentNumber)
@@ -172,7 +169,7 @@ namespace Mustagram2
             HttpResponseMessage response = await client.PostAsJsonAsync("/comment/count-like", new { commentNumber = commentNumber }).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadAsAsync<ResultType>().ConfigureAwait(false);
+            var result = await response.Content.ReadAsAsync<ContentLike>().ConfigureAwait(false);
             return result.like;
         }
 
@@ -209,14 +206,24 @@ namespace Mustagram2
             return isSuccess(await res.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
         //
-
-        public class Post
+        // public async Task<bool> 
+        // public class UserID { public string ID { get; set; } }
+        public async Task<string> GetUserID(int userNumber)
         {
-            public int postNumber { get; set; }
+            HttpResponseMessage response = await client.PostAsJsonAsync("/user/id", new { userNumber = userNumber }).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return result;
+        }
+
+        public class Content
+        {
             public int userNumber { get; set; }
             public string time { get; set; }
             public string content { get; set; }
         }
+        public class Post : Content { public int postNumber { get; set; } }
+        public class Comment : Content { public int commentNumber { get; set; } }
 
         public async Task<List<Post>> GetFriendsPost(string id)
         {
@@ -225,6 +232,15 @@ namespace Mustagram2
             var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<List<Post>>(responseBody);
+        }
+
+        public async Task<List<Comment>> GetComments(int postNumber)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/post/comments", new { postNumber = postNumber }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<List<Comment>>(responseBody);
         }
 
         private bool isSuccess(String result) => result == "success";

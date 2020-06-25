@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace FetchTest {
+namespace Mustagram2 {
   public class MustagramClient
   {
     private static HttpClient client = GenrateClient();
@@ -12,7 +12,7 @@ namespace FetchTest {
     private static HttpClient GenrateClient()
     {
       var client = new HttpClient();
-      client.BaseAddress = new Uri("http://localhost:3000/");
+      client.BaseAddress = new Uri("ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000");
       client.DefaultRequestHeaders.Accept.Clear();
       client.DefaultRequestHeaders.Accept.Add(
           new MediaTypeWithQualityHeaderValue("application/json")

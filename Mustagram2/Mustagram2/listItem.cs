@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using Mustagram2.Properties;
+using System.Runtime.CompilerServices;
 
 namespace Mustagram2
 {
@@ -22,8 +23,10 @@ namespace Mustagram2
         double musiclocation = 0;
         public listPictiure[] LP = new listPictiure[4];
         int pictureindex = 0;
-        public listItem()
+        MainDisplay maindis;
+        public listItem(MainDisplay md)
         {
+            this.maindis = md;
             InitializeComponent();
             pictureBox1.Parent = lvw_main.picure_main;
             pictureBox1.BackColor = Color.Transparent;
@@ -234,6 +237,13 @@ namespace Mustagram2
 
                 }
             }
+        }
+
+        private void lvw_comment_display_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("click");
+            maindis.commentdisplay_open();
+            //maindisplay.commentdispay();
         }
     } 
 }

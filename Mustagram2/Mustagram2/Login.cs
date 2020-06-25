@@ -161,6 +161,19 @@ namespace Mustagram2
                 else
                 {
                     MessageBox.Show("로그인 오류!");
+                   //if (ma.IsDisposed) // 컨트롤이 죽었으면
+                 //   {
+
+                     //   ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
+                      //  ma.Show();
+
+
+                  //  }
+                  //  else
+                  //  {
+                    //    ma.Show();
+
+                  //  }
                 }
                 
                 txtId.Text = "아이디";

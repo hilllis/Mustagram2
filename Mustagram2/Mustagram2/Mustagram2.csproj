@@ -123,6 +123,18 @@
     <Compile Include="CiclePicture.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CommentDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommentDisplay.Designer.cs">
+      <DependentUpon>CommentDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="comment_list.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="comment_list.Designer.cs">
+      <DependentUpon>comment_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="firstMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +212,12 @@
     <Compile Include="SingUp.Designer.cs">
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CommentDisplay.resx">
+      <DependentUpon>CommentDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comment_list.resx">
+      <DependentUpon>comment_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="firstMain.resx">
       <DependentUpon>firstMain.cs</DependentUpon>
     </EmbeddedResource>

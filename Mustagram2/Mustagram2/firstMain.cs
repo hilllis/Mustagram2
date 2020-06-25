@@ -18,6 +18,7 @@ namespace Mustagram2
     {
         MustagramClient client = MustagramClient.GetClient();
         Set_User setuser = Set_User.SetUser();
+        MainDisplay maindisplay;
         List<Post> postList;
         int listCount = 0;
         int listIndex = 0;
@@ -25,9 +26,11 @@ namespace Mustagram2
         public string[] U_ID;
         bool outsider = true;
         public firstMain()
+
+        public firstMain(MainDisplay maindisplay)
         {
             InitializeComponent();
-
+            this.maindisplay = maindisplay;
             string User_ID = setuser.getUser_id();
 
             Func<Task> runAsync = async () =>
@@ -70,6 +73,16 @@ namespace Mustagram2
                 this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
                 int i = 0;
                 foreach (var postItem in postList)
+                
+                LT[i] = new listItem(maindisplay);
+                LT[i].Name = U_ID[i];
+                LT[i].Imagebox = Resources.jisu;
+                LT[i].MainImage = LT[i].LP[0].Image_main;
+                LT[i].Music_name= "러블리즈_Sweet Dream.mp3";
+                LT[i].time = postItem.time;
+                LT[i].Message = postItem.content;
+                i++;
+                if (flowLayoutPanel1.Controls.Count < 0)
                 {
 
                     LT[i] = new listItem(this);

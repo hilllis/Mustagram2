@@ -13,9 +13,12 @@ namespace Mustagram2
     public partial class SetUserInfo : Form
     {
         private string birth;
-        private char sex;
+        private string sex;
         private string intro;
         private string Name;
+        Set_User setuser = Set_User.SetUser();
+        MustagramClient client = MustagramClient.GetClient();
+
         public SetUserInfo()
         {
             InitializeComponent();
@@ -34,17 +37,45 @@ namespace Mustagram2
 
         private void label4_Click(object sender, EventArgs e)
         {
+            bool result = false;
             birth = dateTimePicker1.Value.ToString("yyyyMMdd");
             if (radioButton1.Checked == true)
             {
-                sex = 'm';
+                sex = "m";
             }
             else if(radioButton2.Checked==true)
             {
-                sex = 'f';
+                sex = "f";
             }
             Name = txtName.Text.ToString();
             intro = txtboxIntro.Text.ToString();
+            Func<Task> runAsync = async () =>
+            {
+                try
+                {
+                    if (await client.SendUserPersonalInfo(setuser.getUser_id(), Name,sex,intro, birth).ConfigureAwait(false))
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+                }
+                catch (Exception q)
+                {
+                    Console.WriteLine(q.Message);
+                }
+            };
+            runAsync().GetAwaiter().GetResult();
+            if (result)
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
             this.Close();
         }
 

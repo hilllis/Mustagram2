@@ -18,6 +18,7 @@ namespace Mustagram2
         public virtual string PlaceholderText { get; set; }
         bool act = false;
         bool btnMove = true;
+        Set_User setuser = Set_User.SetUser();
         public SingUp()
         {
             InitializeComponent();
@@ -166,6 +167,7 @@ namespace Mustagram2
                 if(result)
                 {
                     Console.WriteLine("회원가입 성공!");
+                    setuser.setUser_id(txtId.Text.ToString());
                     if (Setuserinfo.IsDisposed) // 컨트롤이 죽었으면
                     {
                         Setuserinfo = new SetUserInfo(); // 다시 인스턴스생성하고 열어줍니다

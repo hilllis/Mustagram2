@@ -20,12 +20,13 @@ namespace Mustagram2
         string profiepath = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/";
         string imagepath;
         string musicpath;
-        public HostCreate()
+        MainDisplay md;
+        public HostCreate(MainDisplay md)
         {
-            profiepath += setuser.getUser_id() + ".jpg";
-
+            //profiepath += setuser.getUser_id() + ".jpg";
+            this.md = md;
             InitializeComponent();
-            lvw_profile1.Load(profiepath);
+            //lvw_profile1.Load(profiepath);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace Mustagram2
                     {
                         result = false;
                     }
-                    if(await client.UploadImage(postNum, @imagepath).ConfigureAwait(false))
+                    if(await client.UploadImage(postNum, imagepath).ConfigureAwait(false))
                     {
                         Console.WriteLine("upload image O");
                     }
@@ -129,6 +130,7 @@ namespace Mustagram2
             };
             runAsync().GetAwaiter().GetResult();
             textBox1.Text = "";
+            md.listRender();
         }
     }
 }

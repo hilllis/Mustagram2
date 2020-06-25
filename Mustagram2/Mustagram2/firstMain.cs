@@ -11,6 +11,7 @@ using Mustagram2.Properties;
 using System.Runtime.InteropServices;
 using WMPLib;
 using static Mustagram2.MustagramClient;
+using System.Runtime.CompilerServices;
 
 namespace Mustagram2
 {
@@ -21,8 +22,12 @@ namespace Mustagram2
         MainDisplay maindisplay;
         List<Post> postList;
         List<listItem> Lt = new List<listItem>();
+        string img_path = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/images/";
+        string music_path = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/music/";
+        string profile = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/";
         int listCount = 0;
         int listIndex = 0;
+        public int[] post_Like;
         public listItem lt;
         public string[] U_ID;
         bool outsider = true;
@@ -93,15 +98,19 @@ namespace Mustagram2
                     Console.WriteLine(postList.Count);
                     listCount = postList.Count();
                     U_ID = new string[listCount];
+                    post_Like = new int[listCount];
+
                     int j = 0;
                     if (listCount > 0)
                     {
                         outsider = false;
                         foreach (var postItem in postList)
                         {
-                            Console.WriteLine(postItem.userNumber);
+                           
 
                             U_ID[j] = (await client.GetUserID(postItem.userNumber).ConfigureAwait(false));
+                            post_Like[j] = (await client.GetPostLike(postItem.postNumber).ConfigureAwait(false));
+
                             j++;
                         }
                     }
@@ -126,14 +135,21 @@ namespace Mustagram2
                 foreach (var postItem in postList)
                 {
                     this.lt = new listItem(maindisplay);
-                    lt.Name = U_ID[i] + i.ToString();
-                    lt.Imagebox = Resources.jisu;
+                    string pro_img=profile+ U_ID[i]+".jpg";
+                    string main_img = img_path;
+                    string mpath = music_path;
+                    lt.Name = U_ID[i];
                     lt.postnumber = postItem.postNumber;
-                    lt.MainImage = Resources.seulgi;
-                    lt.Music_name = "러블리즈_Sweet Dream.mp3";
+                    main_img += postItem.postNumber.ToString() + ".jpg";
+                    mpath += postItem.postNumber.ToString() + ".mp3";
+                    lt.Imagebox = pro_img;
+   
+                    lt.MainImage = main_img;
+                    lt.Music_name = mpath;
 
                     lt.time = postItem.time;
                     lt.Message = postItem.content;
+                    lt.P_like = post_Like[i].ToString();
                     Lt.Add(lt);
 
                     i++;
@@ -141,7 +157,7 @@ namespace Mustagram2
                     {
                         flowLayoutPanel1.Controls.Clear();
                     }
-                    Console.WriteLine("lovelz");
+
                 }
                 flowLayoutPanel1.Controls.Add(Lt[0]);
             }

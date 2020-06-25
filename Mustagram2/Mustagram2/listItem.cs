@@ -18,6 +18,7 @@ namespace Mustagram2
         int PrevY=0;
         bool isCollapsed=true;
         firstMain md;
+        bool like = false;
         hostPro hP = new hostPro();
         public WindowsMediaPlayer player = new WindowsMediaPlayer();
         double musiclocation = 0;
@@ -29,47 +30,22 @@ namespace Mustagram2
         {
             this.maindis = md;
             InitializeComponent();
-            pictureBox1.Parent = lvw_main.picure_main;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox2.Parent = lvw_main.picure_main;
-            pictureBox2.BackColor = Color.Transparent;
+           
             // panel7.Visible = false;
-            music.Parent = lvw_main.picure_main;
-            music.BackColor = Color.Transparent;
-            for (int i = 0; i < LP.Length; i++)
-            {
-                LP[i] = new listPictiure();
-            }
-
-
-            LP[0].Image_main = Resources.jisu;
-            LP[1].Image_main = Resources.jisu2;
-            LP[2].Image_main = Resources.soo;
-            LP[3].Image_main = Resources.seulgi;
+          //  music.Parent = lvw_main;
+           // music.BackColor = Color.Transparent;
+           
 
         }
         public listItem(firstMain md)
         {
             InitializeComponent();
             this.md = md;
-            pictureBox1.Parent = lvw_main.picure_main;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox2.Parent = lvw_main.picure_main;
-            pictureBox2.BackColor = Color.Transparent;
-           // panel7.Visible = false;
-            music.Parent = lvw_main.picure_main;
-            music.BackColor = Color.Transparent;
-            for (int i = 0; i < LP.Length; i++)
-            {
-                LP[i] = new listPictiure();
-           
-            }
-         
 
-            LP[0].Image_main = Resources.jisu;
-            LP[1].Image_main = Resources.jisu2;
-            LP[2].Image_main = Resources.soo;
-            LP[3].Image_main = Resources.seulgi;
+           // panel7.Visible = false;
+           // music.Parent = lvw_main.picure_main;
+           // music.BackColor = Color.Transparent;
+           
 
         }
        
@@ -77,10 +53,17 @@ namespace Mustagram2
 
         private string _name;
         private string _message;
-        private Image _image;
+        private string _image;
         private string music_name;
-        private Image main_image;
+        private string main_image;
         private string _time;
+        private string _pLike;
+        [Category("Custom Props")]
+        public string P_like
+        {
+            get { return _pLike; }
+            set { _pLike = value; label4.Text = value; }
+        }
         [Category("Custom Props")]
         public string Music_name
         {
@@ -88,12 +71,9 @@ namespace Mustagram2
             set
             {
                 music_name = value;
-                music.Text = value;
-                string str = @"C:\Users\poop4\Desktop\유진하/";
-                Console.WriteLine(music.Text);
-                player.URL =music.Text;
+              
+                player.URL = music_name.ToString();
                 player.controls.stop();
-                Console.WriteLine(player.status);
             }
         }
         [Category("Custom Props")]
@@ -116,20 +96,20 @@ namespace Mustagram2
         }
 
         [Category("Custom Props")]
-        public Image Imagebox
+        public string Imagebox
         {
             get { return _image; }
-            set { _image = value; lvw_profile1.Image = value;
-                lvw_profile2.Image = value;
+            set { _image = value; lvw_profile1.Load(value);
+                lvw_profile2.Load(value);
             }
         }
         [Category("Custom Props")]
-        public Image MainImage
+        public string MainImage
         {
             get { return main_image; }
             set
             {
-                main_image = value; lvw_main.Image_main = value;
+                main_image = value; pictureBox1.Load(value);
             
             }
         }
@@ -147,7 +127,7 @@ namespace Mustagram2
             
             if (player.playState.ToString().Equals("wmppsReady")||player.playState.ToString().Equals("wmppsStopped") || player.playState.ToString().Equals("wmppsPaused"))
             {
-                player.URL = music.Text;
+                player.URL = music_name;
 
                 player.controls.currentPosition = musiclocation;
                 Console.WriteLine("play {0}", musiclocation);
@@ -167,26 +147,7 @@ namespace Mustagram2
             }
             
         }
-        public void left(object sender, EventArgs e)
-        {
-            if (0 < pictureindex)
-            {
-                Console.WriteLine("left {0}", pictureindex);
-                this.MainImage = LP[--pictureindex].Image_main;
-            }
-            
-          
-        }
-
-        public void Right(object sender, EventArgs e)
-        {
-            if ( pictureindex<LP.Length-1)
-            {
-                Console.WriteLine("right {0}", pictureindex);
-                this.MainImage = LP[++pictureindex].Image_main;
-            }
-            
-        }
+       
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -245,6 +206,21 @@ namespace Mustagram2
             Console.WriteLine("click");
             maindis.commentdisplay_open(this.postnumber);
             //maindisplay.commentdispay();
+        }
+
+        private void lvw_heart1_Click(object sender, EventArgs e)
+        {
+            if (like)
+            {
+                like = false;
+                lvw_heart1.Image = Resources.strokeheart;
+                //Func<>
+            }
+            else if(!like)
+            {
+                like = true;
+                lvw_heart1.Image = Resources.redheart;
+            }
         }
     } 
 }

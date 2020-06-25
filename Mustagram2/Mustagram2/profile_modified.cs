@@ -72,7 +72,7 @@ namespace Mustagram2
                 {
                     if (path != "")
                     {
-                        if (await client.UploadProfileImage(setuser.getUser_id(), "C:/Users/poop4/Documents/GitHub/Mustagram2/Mustagram2/Mustagram2/Resources/soo.jpg").ConfigureAwait(false))
+                        if (await client.UploadProfileImage(setuser.getUser_id(), path).ConfigureAwait(false))
                         {
                             Console.WriteLine("pictur ok");
                             result = true;

@@ -25,10 +25,10 @@ namespace Mustagram2
             int numFollowing = 0;
             int numFollower = 0;
             pro_ID.Text = User_ID.ToString();
-            profile_modified1.setProfile(this);
+            profile_modified2.setProfile(this);
             Console.WriteLine(User_ID);
-            imagepath += User_ID + ".jpg";
-            lvw_profile1.Load(imagepath);
+           //imagepath += User_ID + ".jpg";
+            //lvw_profile1.Load(imagepath);
             Func<Task> runAsync = async () =>
             {
                 try
@@ -70,6 +70,7 @@ namespace Mustagram2
             this.path = path;
           name = this.path.Split('\\');
             Console.WriteLine(name[name.Length - 1]);
+            imagepath = "http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/";
             imagepath += setuser.getUser_id() + ".jpg";
 
 
@@ -100,7 +101,8 @@ namespace Mustagram2
                     }
                 };
                 runAsync().GetAwaiter().GetResult();
-                lvw_profile1.Load("http://ec2-18-191-128-120.us-east-2.compute.amazonaws.com:3000/profile/유동관.jpg");
+
+                lvw_profile1.Load(imagepath);
                 Console.WriteLine("visi {0}", userIntro.ToString());
                 Console.WriteLine(imagepath);
            

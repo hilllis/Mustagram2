@@ -29,24 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(comment_list));
-            this.lvw_profile1 = new Mustagram.CiclePicture();
             this.tstId = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
+            this.lvw_profile1 = new Mustagram.CiclePicture();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lvw_profile1
-            // 
-            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(34, 3);
-            this.lvw_profile1.Name = "lvw_profile1";
-            this.lvw_profile1.Size = new System.Drawing.Size(49, 49);
-            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lvw_profile1.TabIndex = 7;
-            this.lvw_profile1.TabStop = false;
             // 
             // tstId
             // 
@@ -75,6 +64,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lvw_profile1
+            // 
+            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
+            this.lvw_profile1.Location = new System.Drawing.Point(34, 3);
+            this.lvw_profile1.Name = "lvw_profile1";
+            this.lvw_profile1.Size = new System.Drawing.Size(49, 49);
+            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lvw_profile1.TabIndex = 7;
+            this.lvw_profile1.TabStop = false;
             // 
             // comment_list
             // 
@@ -88,8 +89,8 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "comment_list";
             this.Size = new System.Drawing.Size(491, 57);
-            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

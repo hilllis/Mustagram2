@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mustagram2.Properties;
 
 namespace Mustagram2
 {
     public partial class comment_list : UserControl
     {
+        bool like = false;
         public comment_list()
         {
             InitializeComponent();
-            Console.WriteLine("commenlist");
         }
         private string _name;
         private string _comment;
@@ -48,6 +49,20 @@ namespace Mustagram2
             {
                 _image = value; lvw_profile1.Image = value;
                 lvw_profile1.Image = value;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (!like)
+            {
+                like = true;
+                pictureBox1.Image = Resources.strokeheart;
+            }
+            else
+            {
+                like = false;
+                pictureBox1.Image = Resources.redheart;
             }
         }
     }

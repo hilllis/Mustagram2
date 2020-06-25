@@ -104,12 +104,19 @@ namespace Mustagram2
         }
         public void listRender()
         {
-           // panel1.Controls.Clear();
-            //panel1.Controls.Add(fM);
+            fM = new firstMain(this);
+            panel1.Controls.Clear();
+            panel1.Controls.Add(fM);
+        }
+        public void finishPostCreat()
+        {
+            profile Pr = new profile();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(Pr);
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            HostCreate hc = new HostCreate();
+            HostCreate hc = new HostCreate(this);
             panel1.Controls.Clear();
             panel1.Controls.Add(hc);
         }

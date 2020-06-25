@@ -387,6 +387,7 @@
             this.profile_modified2.Name = "profile_modified2";
             this.profile_modified2.Size = new System.Drawing.Size(491, 234);
             this.profile_modified2.TabIndex = 6;
+            this.profile_modified2.Visible = false;
             this.profile_modified2.VisibleChanged += new System.EventHandler(this.profile_modified2_VisibleChanged);
             // 
             // profile

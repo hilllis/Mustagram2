@@ -18,8 +18,8 @@ namespace Mustagram2
         MustagramClient client = MustagramClient.GetClient();
         Set_User setuser = Set_User.SetUser();
         SingUp signUp = new SingUp();
-        MainDisplay ma = new MainDisplay();
 
+        MainDisplay ma;
         string Id = "";
         string Password = "";
         bool btnMove = true;
@@ -150,19 +150,21 @@ namespace Mustagram2
                 if (result)
                 {
                     setuser.setUser_id(txtId.Text.ToString());
-                    Console.WriteLine(setuser.getUser_id());
-                    if (ma.IsDisposed) // 컨트롤이 죽었으면
-                    {
-                        ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
-                        ma.Show();
+                    ma = new MainDisplay();
+                    ma.Show();
+                   // if (ma.IsDisposed) // 컨트롤이 죽었으면
+                 //   {
+
+                     //   ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
+                      //  ma.Show();
 
 
-                    }
-                    else
-                    {
-                        ma.Show();
+                  //  }
+                  //  else
+                  //  {
+                    //    ma.Show();
 
-                    }
+                  //  }
                 }
                 
                 txtId.Text = "아이디";

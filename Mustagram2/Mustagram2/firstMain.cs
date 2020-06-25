@@ -18,16 +18,17 @@ namespace Mustagram2
     {
         MustagramClient client = MustagramClient.GetClient();
         Set_User setuser = Set_User.SetUser();
+        MainDisplay maindisplay;
         List<Post> postList;
         int listCount = 0;
         int listIndex = 0;
         public listItem[] LT;
         public string[] U_ID;
 
-        public firstMain()
+        public firstMain(MainDisplay maindisplay)
         {
             InitializeComponent();
-
+            this.maindisplay = maindisplay;
             string User_ID = setuser.getUser_id();
 
             Func<Task> runAsync = async () =>
@@ -62,7 +63,7 @@ namespace Mustagram2
             foreach (var postItem in postList)
             {
                 
-                LT[i] = new listItem(this);
+                LT[i] = new listItem(maindisplay);
                 LT[i].Name = U_ID[i];
                 LT[i].Imagebox = Resources.jisu;
                 LT[i].MainImage = LT[i].LP[0].Image_main;

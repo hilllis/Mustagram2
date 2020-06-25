@@ -51,10 +51,10 @@
             this.pro_fix = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1.SuspendLayout();
@@ -66,8 +66,8 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,18 +77,16 @@
             this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(701, 80);
+            this.panel1.Size = new System.Drawing.Size(491, 53);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Mustagram2.Properties.Resources.burger_line_list_menu_nav_navigation_option_icon_123231;
-            this.pictureBox1.Location = new System.Drawing.Point(591, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(414, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 56);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -97,10 +95,9 @@
             // 
             this.pro_ID.AutoSize = true;
             this.pro_ID.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Underline);
-            this.pro_ID.Location = new System.Drawing.Point(301, 24);
-            this.pro_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pro_ID.Location = new System.Drawing.Point(211, 16);
             this.pro_ID.Name = "pro_ID";
-            this.pro_ID.Size = new System.Drawing.Size(103, 30);
+            this.pro_ID.Size = new System.Drawing.Size(69, 20);
             this.pro_ID.TabIndex = 6;
             this.pro_ID.Text = "Seo_jisu";
             // 
@@ -111,7 +108,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.c});
-            this.shapeContainer1.Size = new System.Drawing.Size(701, 80);
+            this.shapeContainer1.Size = new System.Drawing.Size(491, 53);
             this.shapeContainer1.TabIndex = 8;
             this.shapeContainer1.TabStop = false;
             // 
@@ -135,19 +132,17 @@
             this.panel2.Controls.Add(this.pro_gal);
             this.panel2.Controls.Add(this.lvw_profile1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 114);
+            this.panel2.Size = new System.Drawing.Size(491, 76);
             this.panel2.TabIndex = 2;
             // 
             // ciclePicture1
             // 
             this.ciclePicture1.Image = global::Mustagram2.Properties.Resources.plus;
-            this.ciclePicture1.Location = new System.Drawing.Point(91, 68);
-            this.ciclePicture1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ciclePicture1.Location = new System.Drawing.Point(64, 45);
             this.ciclePicture1.Name = "ciclePicture1";
-            this.ciclePicture1.Size = new System.Drawing.Size(34, 32);
+            this.ciclePicture1.Size = new System.Drawing.Size(24, 21);
             this.ciclePicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ciclePicture1.TabIndex = 13;
             this.ciclePicture1.TabStop = false;
@@ -156,10 +151,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.label3.Location = new System.Drawing.Point(594, 74);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(416, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 24);
+            this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "팔로잉";
             // 
@@ -167,10 +161,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.label2.Location = new System.Drawing.Point(486, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(340, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 24);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "팔로워";
             // 
@@ -178,10 +171,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.label1.Location = new System.Drawing.Point(363, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(254, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 24);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "게시물";
             // 
@@ -189,10 +181,9 @@
             // 
             this.pro_following.AutoSize = true;
             this.pro_following.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.pro_following.Location = new System.Drawing.Point(611, 30);
-            this.pro_following.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pro_following.Location = new System.Drawing.Point(428, 20);
             this.pro_following.Name = "pro_following";
-            this.pro_following.Size = new System.Drawing.Size(26, 30);
+            this.pro_following.Size = new System.Drawing.Size(18, 20);
             this.pro_following.TabIndex = 9;
             this.pro_following.Text = "0";
             // 
@@ -200,10 +191,9 @@
             // 
             this.pro_follower.AutoSize = true;
             this.pro_follower.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.pro_follower.Location = new System.Drawing.Point(503, 30);
-            this.pro_follower.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pro_follower.Location = new System.Drawing.Point(352, 20);
             this.pro_follower.Name = "pro_follower";
-            this.pro_follower.Size = new System.Drawing.Size(26, 30);
+            this.pro_follower.Size = new System.Drawing.Size(18, 20);
             this.pro_follower.TabIndex = 8;
             this.pro_follower.Text = "0";
             // 
@@ -211,10 +201,9 @@
             // 
             this.pro_gal.AutoSize = true;
             this.pro_gal.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.pro_gal.Location = new System.Drawing.Point(379, 30);
-            this.pro_gal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pro_gal.Location = new System.Drawing.Point(265, 20);
             this.pro_gal.Name = "pro_gal";
-            this.pro_gal.Size = new System.Drawing.Size(26, 30);
+            this.pro_gal.Size = new System.Drawing.Size(18, 20);
             this.pro_gal.TabIndex = 7;
             this.pro_gal.Text = "0";
             // 
@@ -222,10 +211,9 @@
             // 
             this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(29, 12);
-            this.lvw_profile1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvw_profile1.Location = new System.Drawing.Point(20, 8);
             this.lvw_profile1.Name = "lvw_profile1";
-            this.lvw_profile1.Size = new System.Drawing.Size(83, 87);
+            this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
             this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lvw_profile1.TabIndex = 6;
             this.lvw_profile1.TabStop = false;
@@ -235,20 +223,18 @@
             // 
             this.panel3.Controls.Add(this.pro_Name);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 194);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 129);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(701, 26);
+            this.panel3.Size = new System.Drawing.Size(491, 17);
             this.panel3.TabIndex = 3;
             // 
             // pro_Name
             // 
             this.pro_Name.AutoSize = true;
             this.pro_Name.Font = new System.Drawing.Font("Comic Sans MS", 8F);
-            this.pro_Name.Location = new System.Drawing.Point(9, 2);
-            this.pro_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pro_Name.Location = new System.Drawing.Point(6, 1);
             this.pro_Name.Name = "pro_Name";
-            this.pro_Name.Size = new System.Drawing.Size(58, 23);
+            this.pro_Name.Size = new System.Drawing.Size(43, 15);
             this.pro_Name.TabIndex = 7;
             this.pro_Name.Text = "서지수";
             // 
@@ -258,20 +244,18 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.shapeContainer2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 220);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(0, 146);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(701, 51);
+            this.panel4.Size = new System.Drawing.Size(491, 34);
             this.panel4.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            this.label4.Location = new System.Drawing.Point(301, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(211, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 26);
+            this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "프로필 수정";
             // 
@@ -282,7 +266,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.pro_fix});
-            this.shapeContainer2.Size = new System.Drawing.Size(701, 51);
+            this.shapeContainer2.Size = new System.Drawing.Size(491, 34);
             this.shapeContainer2.TabIndex = 0;
             this.shapeContainer2.TabStop = false;
             // 
@@ -299,46 +283,28 @@
             // 
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 271);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(0, 180);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(701, 87);
+            this.panel5.Size = new System.Drawing.Size(491, 58);
             this.panel5.TabIndex = 5;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::Mustagram2.Properties.Resources.interface1;
-            this.pictureBox2.Location = new System.Drawing.Point(313, 20);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(219, 13);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.shapeContainer3);
-            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 358);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(701, 614);
-            this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Mustagram2.Properties.Resources.picure_add;
-            this.pictureBox3.Location = new System.Drawing.Point(259, 178);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(181, 119);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(167, 120);
+            this.pictureBox3.Size = new System.Drawing.Size(117, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -349,10 +315,9 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Underline);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(179)))), ((int)(((byte)(244)))));
-            this.label7.Location = new System.Drawing.Point(191, 459);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(134, 306);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(302, 24);
+            this.label7.Size = new System.Drawing.Size(216, 17);
             this.label7.TabIndex = 40;
             this.label7.Text = "첫 번째 사진이나 동영상을 공유하세요";
             // 
@@ -360,12 +325,25 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20F);
-            this.label5.Location = new System.Drawing.Point(184, 338);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(129, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(340, 56);
+            this.label5.Size = new System.Drawing.Size(230, 38);
             this.label5.TabIndex = 6;
             this.label5.Text = "사진 및 음악 공유";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pictureBox3);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.shapeContainer3);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 238);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(491, 410);
+            this.panel6.TabIndex = 1;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // shapeContainer3
             // 
@@ -374,7 +352,7 @@
             this.shapeContainer3.Name = "shapeContainer3";
             this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer3.Size = new System.Drawing.Size(701, 614);
+            this.shapeContainer3.Size = new System.Drawing.Size(491, 410);
             this.shapeContainer3.TabIndex = 1;
             this.shapeContainer3.TabStop = false;
             // 
@@ -390,7 +368,7 @@
             // 
             // profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel6);
@@ -401,7 +379,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "profile";
-            this.Size = new System.Drawing.Size(701, 972);
+            this.Size = new System.Drawing.Size(491, 648);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -415,9 +393,9 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,11 +424,11 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape pro_fix;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel6;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel6;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }

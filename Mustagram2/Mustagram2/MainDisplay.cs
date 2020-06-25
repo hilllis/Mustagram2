@@ -18,14 +18,14 @@ namespace Mustagram2
     public partial class MainDisplay : Form
     {
 
-        hostPro hP = new hostPro();
-        firstMain fM = new firstMain();
+        firstMain fM;
         Log lg = new Log();
         int listIndex = 0;
+ 
         public MainDisplay()
         {
             InitializeComponent();
-
+            fM = new firstMain(this);
             //this.panel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseWheel);
 
         }
@@ -68,8 +68,19 @@ namespace Mustagram2
             panel1.Controls.Add(fM);
         }
 
-
-
+        public void commentdisplay_open()
+        {
+           
+            CommentDisplay cd = new CommentDisplay(this);
+            panel1.Controls.Clear();
+            panel1.Controls.Add(cd);
+        }
+        public void commentdisplay_off()
+        {
+        
+            panel1.Controls.Clear();
+            panel1.Controls.Add(fM);
+        }
         public void Exit()
         {
             this.Close();

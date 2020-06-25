@@ -56,6 +56,7 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.music = new System.Windows.Forms.PictureBox();
             this.hostPro1 = new Mustagram2.hostPro();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -63,7 +64,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lvw_time = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.music = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lvw_name = new System.Windows.Forms.Label();
             this.lvw_profile1 = new Mustagram.CiclePicture();
@@ -81,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.music)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -360,6 +360,17 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // music
+            // 
+            this.music.Image = global::Mustagram2.Properties.Resources.music1;
+            this.music.Location = new System.Drawing.Point(401, 21);
+            this.music.Name = "music";
+            this.music.Size = new System.Drawing.Size(30, 28);
+            this.music.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.music.TabIndex = 18;
+            this.music.TabStop = false;
+            this.music.Click += new System.EventHandler(this.music_Click);
+            // 
             // hostPro1
             // 
             this.hostPro1.BackColor = System.Drawing.Color.White;
@@ -434,17 +445,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 64);
             this.panel1.TabIndex = 0;
-            // 
-            // music
-            // 
-            this.music.Image = global::Mustagram2.Properties.Resources.music1;
-            this.music.Location = new System.Drawing.Point(401, 21);
-            this.music.Name = "music";
-            this.music.Size = new System.Drawing.Size(30, 28);
-            this.music.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.music.TabIndex = 18;
-            this.music.TabStop = false;
-            this.music.Click += new System.EventHandler(this.music_Click);
             // 
             // label2
             // 
@@ -532,9 +532,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lvw_heart1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.music)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.music)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvw_profile1)).EndInit();
             this.ResumeLayout(false);
 

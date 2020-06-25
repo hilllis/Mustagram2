@@ -163,12 +163,13 @@ namespace Mustagram2
                 if(result)
                 {
                     MessageBox.Show("회원가입 성공!");
+                    Close();
                 }
                 else
                 {
                     MessageBox.Show("회원가입 실패!");
                 }
-                Close();
+          
             }
         }
 

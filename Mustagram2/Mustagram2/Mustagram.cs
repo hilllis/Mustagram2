@@ -149,7 +149,7 @@ namespace Mustagram2 {
 
     private class ResultType
     {
-      public int id { get; set; }
+      public int like { get; set; }
     }
     public async Task<int> GetPostLike(int postNumber)
     {
@@ -157,7 +157,14 @@ namespace Mustagram2 {
       response.EnsureSuccessStatusCode();
 
       var result = await response.Content.ReadAsAsync<ResultType>();
-      return result.id;
+      return result.like;
+    }
+    public async Task<int> GetCommentLike(int commentNumber) {
+      HttpResponseMessage response = await client.PostAsJsonAsync("/comment/count-like", new { commentNumber = commentNumber });
+      response.EnsureSuccessStatusCode();
+
+      var result = await response.Content.ReadAsAsync<ResultType>();
+      return result.like;
     }
 
     public async Task<String> GetStringAsync(string path)
@@ -170,7 +177,13 @@ namespace Mustagram2 {
       return word;
     }
 
+    public async Task<bool> CreatePost(string id, string content) {
+      HttpResponseMessage res = await client.PostAsJsonAsync("/post/create", new {id=id, content=content});
+      res.EnsureSuccessStatusCode();
+
+      return isSuccess(await res.Content.ReadAsStringAsync());
+    }
+
     private bool isSuccess(String result) => result == "success";
-  }
   }
 }

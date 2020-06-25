@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HostCreate));
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lvw_profile1 = new Mustagram.CiclePicture();
             this.exit = new System.Windows.Forms.Label();
             this.shapeContainer7 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lvw_profile1 = new Mustagram.CiclePicture();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,6 +57,17 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(491, 61);
             this.panel7.TabIndex = 45;
+            // 
+            // lvw_profile1
+            // 
+            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
+            this.lvw_profile1.Location = new System.Drawing.Point(216, 1);
+            this.lvw_profile1.Name = "lvw_profile1";
+            this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
+            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lvw_profile1.TabIndex = 46;
+            this.lvw_profile1.TabStop = false;
             // 
             // exit
             // 
@@ -88,17 +99,6 @@
             this.lineShape9.X2 = 491;
             this.lineShape9.Y1 = 60;
             this.lineShape9.Y2 = 60;
-            // 
-            // lvw_profile1
-            // 
-            this.lvw_profile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lvw_profile1.Image = ((System.Drawing.Image)(resources.GetObject("lvw_profile1.Image")));
-            this.lvw_profile1.Location = new System.Drawing.Point(216, 1);
-            this.lvw_profile1.Name = "lvw_profile1";
-            this.lvw_profile1.Size = new System.Drawing.Size(58, 58);
-            this.lvw_profile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lvw_profile1.TabIndex = 46;
-            this.lvw_profile1.TabStop = false;
             // 
             // label2
             // 
@@ -139,7 +139,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(-1, 500);
+            this.textBox1.Location = new System.Drawing.Point(0, 520);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(491, 20);

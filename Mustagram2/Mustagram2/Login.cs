@@ -15,14 +15,15 @@ namespace Mustagram2
 {
     public partial class Login : Form
     {
+        MustagramClient client = MustagramClient.GetClient();
         SingUp signUp = new SingUp();
         MainDisplay ma = new MainDisplay();
-        static readonly HttpClient client = new HttpClient();
-        string Id="";
+
+        string Id = "";
         string Password = "";
         bool btnMove = true;
         bool act = false;
-    public Login()
+        public Login()
         {
             InitializeComponent();
 
@@ -37,16 +38,16 @@ namespace Mustagram2
                 txtId.Text = "";
                 txtId.ForeColor = Color.Black;
                 txtId.Enabled = true;
-            
+
             }
             else if (txtId.Text == string.Empty)
             {
                 txtId.Text = "아이디";
                 txtId.ForeColor = Color.Gray;
-    
+
 
             }
-           
+
         }
         private void txtPassword_hint_On_Off(object sender, EventArgs e)
         {
@@ -58,18 +59,18 @@ namespace Mustagram2
                 txtPassword.PasswordChar = '*';
                 txtPassword.ForeColor = Color.Black;
                 txtPassword.Enabled = true;
- 
+
             }
             else if (txtPassword.Text == string.Empty)
             {
-              
-               txtPassword.PasswordChar = '\0';
+
+                txtPassword.PasswordChar = '\0';
                 txtPassword.Text = "비밀번호";
                 txtPassword.ForeColor = Color.Gray;
-              
+
 
             }
-           
+
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -78,7 +79,7 @@ namespace Mustagram2
 
         private void Button_Activation(object sender, EventArgs e)
         {
-            if (!txtPassword.Text.Equals("")&&! txtPassword.Text.Equals("비밀번호") && !txtId.Text.Equals( "아이디") && !txtId.Text.Equals( ""))
+            if (!txtPassword.Text.Equals("") && !txtPassword.Text.Equals("비밀번호") && !txtId.Text.Equals("아이디") && !txtId.Text.Equals(""))
             {
                 btnLogin.BackColor = Color.Black;
                 label2.BackColor = Color.Black;
@@ -97,8 +98,8 @@ namespace Mustagram2
         int left;
         private void label7_Click(object sender, EventArgs e)
         {
-           
-           
+
+
             if (signUp.IsDisposed) // 컨트롤이 죽었으면
             {
                 signUp = new SingUp(); // 다시 인스턴스생성하고 열어줍니다
@@ -113,30 +114,54 @@ namespace Mustagram2
 
         }
 
-       
-    
+
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            bool result=false;
 
-            
-            if (txtId.Text != "" && txtPassword.Text != "" && txtId.Text != "아이디"&& txtPassword.Text != "비밀번호")
+            Func<Task> runAsyn = async () =>
             {
-                Console.WriteLine("Login ID : {0}", txtId.Text);
-                Console.WriteLine("Login Password : {0}", txtPassword.Text);
-                if (ma.IsDisposed) // 컨트롤이 죽었으면
+                try
                 {
-                    ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
-                    ma.Show();
+
+                    if (await client.SendLoginInfo(txtId.Text.ToString(), txtPassword.Text.ToString()).ConfigureAwait(false))
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+
 
 
                 }
-                else
+                catch (Exception q)
                 {
-                    ma.Show();
-
+                    Console.WriteLine(q.Message);
                 }
-              
+            };
+            if (txtId.Text != "" && txtPassword.Text != "" && txtId.Text != "아이디" && txtPassword.Text != "비밀번호")
+            {
+                runAsyn().GetAwaiter().GetResult();
+                if (result)
+                {
+                    if (ma.IsDisposed) // 컨트롤이 죽었으면
+                    {
+                        ma = new MainDisplay(); // 다시 인스턴스생성하고 열어줍니다
+                        ma.Show();
+
+
+                    }
+                    else
+                    {
+                        ma.Show();
+
+                    }
+                }
+                
                 txtId.Text = "아이디";
                 txtId.ForeColor = Color.Gray;
                 txtPassword.PasswordChar = '\0';
@@ -147,15 +172,17 @@ namespace Mustagram2
             {
                 MessageBox.Show("ID, Password Input");
             }
+
+
         }
-            private void label2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
             btnLogin_Click(sender, e);
         }
 
         private void btnLogin_Enter(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -187,12 +214,12 @@ namespace Mustagram2
                 }
             }
         }
-        
+
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             Console.WriteLine("start");
             signUp.Left += 10;
-            if (signUp.Left >= left+400)
+            if (signUp.Left >= left + 400)
             {
                 timer1.Stop();
                 this.TopMost = false;

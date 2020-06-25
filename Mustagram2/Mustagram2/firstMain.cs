@@ -24,6 +24,7 @@ namespace Mustagram2
         int listIndex = 0;
         public listItem[] LT;
         public string[] U_ID;
+        bool outsider = true;
 
         public firstMain(MainDisplay maindisplay)
         {
@@ -59,19 +60,11 @@ namespace Mustagram2
                }
            };
             runAsync().GetAwaiter().GetResult();
-
+            int i = 0;
             if (outsider)
             {
                 
-                LT[i] = new listItem(maindisplay);
-                LT[i].Name = U_ID[i];
-                LT[i].Imagebox = Resources.jisu;
-                LT[i].MainImage = LT[i].LP[0].Image_main;
-                LT[i].Music_name= "러블리즈_Sweet Dream.mp3";
-                LT[i].time = postItem.time;
-                LT[i].Message = postItem.content;
-                i++;
-                if (flowLayoutPanel1.Controls.Count < 0)
+               
                 Console.WriteLine("OutSider!");
             }
 
@@ -79,11 +72,11 @@ namespace Mustagram2
             {
                 LT = new listItem[listCount];
                 this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
-                int i = 0;
+    
                 foreach (var postItem in postList)
                 {
 
-                    LT[i] = new listItem(this);
+                    LT[i] = new listItem(maindisplay);
                     LT[i].Name = U_ID[i];
                     LT[i].Imagebox = Resources.jisu;
                     LT[i].MainImage = LT[i].LP[0].Image_main;

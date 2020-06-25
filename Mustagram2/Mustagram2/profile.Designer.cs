@@ -57,8 +57,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-           // this.profile_modified1 = new Mustagram2.profile_modified();
-            this.profile_modified2 = new Mustagram2.profile_modified();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -308,7 +306,7 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Underline);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(179)))), ((int)(((byte)(244)))));
-            this.label7.Location = new System.Drawing.Point(134, 306);
+            this.label7.Location = new System.Drawing.Point(133, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(216, 17);
             this.label7.TabIndex = 40;
@@ -317,10 +315,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20F);
-            this.label5.Location = new System.Drawing.Point(129, 225);
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 16F);
+            this.label5.Location = new System.Drawing.Point(152, 214);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 38);
+            this.label5.Size = new System.Drawing.Size(188, 30);
             this.label5.TabIndex = 6;
             this.label5.Text = "사진 및 음악 공유";
             // 
@@ -341,9 +339,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Mustagram2.Properties.Resources.picure_add;
-            this.pictureBox3.Location = new System.Drawing.Point(181, 119);
+            this.pictureBox3.Location = new System.Drawing.Point(212, 135);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(117, 80);
+            this.pictureBox3.Size = new System.Drawing.Size(68, 52);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -369,33 +367,11 @@
             this.lineShape1.Y1 = 0;
             this.lineShape1.Y2 = 0;
             // 
-            // profile_modified1
-            // 
-            this.profile_modified1.BackColor = System.Drawing.Color.White;
-            this.profile_modified1.Location = new System.Drawing.Point(0, 0);
-            this.profile_modified1.Name = "profile_modified1";
-            this.profile_modified1.Size = new System.Drawing.Size(491, 234);
-            this.profile_modified1.TabIndex = 6;
-            this.profile_modified1.Visible = false;
-            this.profile_modified1.VisibleChanged += new System.EventHandler(this.profile_modified2_VisibleChanged);
-            // 
-            // profile_modified2
-            // 
-            this.profile_modified2.BackColor = System.Drawing.Color.White;
-            this.profile_modified2.CausesValidation = false;
-            this.profile_modified2.Location = new System.Drawing.Point(0, 0);
-            this.profile_modified2.Name = "profile_modified2";
-            this.profile_modified2.Size = new System.Drawing.Size(491, 234);
-            this.profile_modified2.TabIndex = 6;
-            this.profile_modified2.Visible = false;
-            this.profile_modified2.VisibleChanged += new System.EventHandler(this.profile_modified2_VisibleChanged);
-            // 
             // profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.profile_modified2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);

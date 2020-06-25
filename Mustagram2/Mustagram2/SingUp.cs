@@ -14,6 +14,7 @@ namespace Mustagram2
     public partial class SingUp : Form
     {
         MustagramClient client = MustagramClient.GetClient();
+        SetUserInfo Setuserinfo = new SetUserInfo();
         public virtual string PlaceholderText { get; set; }
         bool act = false;
         bool btnMove = true;
@@ -22,11 +23,13 @@ namespace Mustagram2
             InitializeComponent();
             //textPassword.PlaceholderText("dsadsa");
             this.ActiveControl = pictureBox1;
+          
         }
 
         private void SingUp_Load(object sender, EventArgs e)
         {
-
+         
+          
         }
 
         private void txtId_hint_On_Off(object sender, EventArgs e)
@@ -162,8 +165,17 @@ namespace Mustagram2
                 runAsync().GetAwaiter().GetResult();
                 if(result)
                 {
-                    MessageBox.Show("회원가입 성공!");
-                    Close();
+                    Console.WriteLine("회원가입 성공!");
+                    if (Setuserinfo.IsDisposed) // 컨트롤이 죽었으면
+                    {
+                        Setuserinfo = new SetUserInfo(); // 다시 인스턴스생성하고 열어줍니다
+                        Setuserinfo.Show();
+                    }
+                    else
+                    {
+                        Setuserinfo.Show();
+                    }
+                    this.Close();
                 }
                 else
                 {

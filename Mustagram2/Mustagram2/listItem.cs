@@ -62,8 +62,6 @@ namespace Mustagram2
             {
                 LP[i] = new listPictiure();
            
-
-
             }
          
 

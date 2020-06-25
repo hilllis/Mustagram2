@@ -61,7 +61,7 @@ namespace Mustagram2
                }
            };
             runAsync().GetAwaiter().GetResult();
-
+            int i = 0;
             if (outsider)
             {
                 Console.WriteLine("OutSider!");
@@ -83,9 +83,20 @@ namespace Mustagram2
                 LT[i].Message = postItem.content;
                 i++;
                 if (flowLayoutPanel1.Controls.Count < 0)
+                
+               
+                Console.WriteLine("OutSider!");
+            }
+
+            else
+            {
+                LT = new listItem[listCount];
+                this.flowLayoutPanel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel);
+    
+                foreach (var postItem in postList)
                 {
 
-                    LT[i] = new listItem(this);
+                    LT[i] = new listItem(maindisplay);
                     LT[i].Name = U_ID[i];
                     LT[i].Imagebox = Resources.jisu;
                     LT[i].MainImage = LT[i].LP[0].Image_main;

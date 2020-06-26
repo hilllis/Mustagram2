@@ -47,7 +47,7 @@ namespace Mustagram2
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     musicpath = ofd.FileName;
-                    label3.Text = ofd.FileName;
+           
                 }
             }
         }

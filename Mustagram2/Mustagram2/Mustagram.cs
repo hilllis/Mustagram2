@@ -182,14 +182,6 @@ namespace Mustagram2
 
             return isSuccess(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
-        public async Task<List<Post>> GetMyPosts(string id)
-        {
-            HttpResponseMessage res = await client.PostAsJsonAsync("/user/posts", new { id = id }).ConfigureAwait(false);
-            res.EnsureSuccessStatusCode();
-            var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            return JsonConvert.DeserializeObject<List<Post>>(responseBody);
-        }
         public async Task<bool> SendUnfollowRequest(string myId, string friendId)
         {
             var followRequest = new
@@ -319,7 +311,14 @@ namespace Mustagram2
 
             return JsonConvert.DeserializeObject<List<Post>>(responseBody);
         }
+        public async Task<List<Post>> GetMyPosts(string id)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/user/posts", new { id = id }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            return JsonConvert.DeserializeObject<List<Post>>(responseBody);
+        }
         public async Task<List<Comment>> GetComments(int postNumber)
         {
             HttpResponseMessage res = await client.PostAsJsonAsync("/post/comments", new { postNumber = postNumber }).ConfigureAwait(false);
@@ -329,6 +328,33 @@ namespace Mustagram2
             return JsonConvert.DeserializeObject<List<Comment>>(responseBody);
         }
 
+        public class FriendRecommendation
+        {
+            public string id { get; set; }
+            public int userNumber { get; set; }
+        }
+        public async Task<List<FriendRecommendation>> GetFriendsRecommendation(string id)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/user/friend/recommendation", new { id = id }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var responseBody = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<List<FriendRecommendation>>(responseBody);
+        }
+        public async Task<string> LikePost(string id, int postNumber)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/post/like", new { id = id, postNumber = postNumber }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var result = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return result;
+        }
+        public async Task<string> LikeComment(string id, int commentNumber)
+        {
+            HttpResponseMessage res = await client.PostAsJsonAsync("/comment/like", new { id = id, commentNumber = commentNumber }).ConfigureAwait(false);
+            res.EnsureSuccessStatusCode();
+            var result = await res.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return result;
+        }
         private bool isSuccess(String result) => result == "success";
     }
 }

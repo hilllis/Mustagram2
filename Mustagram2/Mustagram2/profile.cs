@@ -27,8 +27,8 @@ namespace Mustagram2
             pro_ID.Text = User_ID.ToString();
             profile_modified2.setProfile(this);
             Console.WriteLine(User_ID);
-           //imagepath += User_ID + ".jpg";
-            //lvw_profile1.Load(imagepath);
+           imagepath += User_ID + ".jpg";
+            lvw_profile1.Load(imagepath);
             Func<Task> runAsync = async () =>
             {
                 try

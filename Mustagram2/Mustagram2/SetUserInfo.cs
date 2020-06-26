@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mustagram2.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +61,9 @@ namespace Mustagram2
                     else
                     {
                         result = false;
+                    }
+                    if(await client.UploadProfileImage(setuser.getUser_id(), "./jisu2.jpg").ConfigureAwait(false)){
+
                     }
                    
                 }
